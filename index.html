@@ -1,28 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Example Page</title>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALEX_DEV_OPS | Principal DevOps Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#4f46e5",
+                "tertiary": "#ffb695",
+                "surface-container-lowest": "#0e0d16",
+                "primary-fixed-dim": "#c3c0ff",
+                "on-secondary": "#303033",
+                "tertiary-fixed": "#ffdbcc",
+                "surface-tint": "#c3c0ff",
+                "surface-container": "#1f1f28",
+                "on-tertiary-container": "#ffd2be",
+                "tertiary-container": "#a44100",
+                "on-secondary-fixed": "#1b1b1e",
+                "surface": "#13121b",
+                "on-primary-fixed-variant": "#3323cc",
+                "on-primary-fixed": "#0f0069",
+                "on-tertiary-fixed": "#351000",
+                "on-tertiary": "#571f00",
+                "inverse-on-surface": "#302f39",
+                "surface-container-low": "#1b1b24",
+                "on-secondary-container": "#b6b4b8",
+                "surface-dim": "#13121b",
+                "inverse-surface": "#e4e1ee",
+                "surface-bright": "#393842",
+                "on-tertiary-fixed-variant": "#7b2f00",
+                "on-error": "#690005",
+                "on-surface-variant": "#c7c4d8",
+                "primary-fixed": "#e2dfff",
+                "secondary": "#c8c5ca",
+                "outline-variant": "#464555",
+                "surface-container-highest": "#35343e",
+                "surface-variant": "#35343e",
+                "secondary-fixed": "#e4e1e6",
+                "inverse-primary": "#4d44e3",
+                "surface-container-high": "#2a2933",
+                "tertiary-fixed-dim": "#ffb695",
+                "on-background": "#e4e1ee",
+                "background": "#13121b",
+                "on-error-container": "#ffdad6",
+                "on-surface": "#e4e1ee",
+                "outline": "#918fa1",
+                "on-secondary-fixed-variant": "#47464a",
+                "on-primary-container": "#dad7ff",
+                "secondary-fixed-dim": "#c8c5ca",
+                "error": "#ffb4ab",
+                "on-primary": "#1d00a5",
+                "error-container": "#93000a",
+                "secondary-container": "#47464a",
+                "primary": "#c3c0ff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "asymmetric-split": "66% 33%",
+                "container-max": "1280px",
+                "section-gap": "120px",
+                "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                "headline-md": ["Geist"],
+                "display-lg": ["Geist"],
+                "mono-code": ["Geist Mono"],
+                "body-md": ["Geist"],
+                "mono-label": ["Geist Mono"],
+                "body-lg": ["Geist"],
+                "display-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "mono-code": ["14px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "mono-label": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
 <style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-h1 { color: darkblue; }
-p { font-size: 16px; }
-a { color: green; text-decoration: none; }
-a:hover { text-decoration: underline; }
-table { border-collapse: collapse; width: 50%; }
-table, th, td { border: 1px solid black; padding: 8px; }
-</style>
+        body {
+            background-color: #09090B;
+            color: #e4e1ee;
+            font-family: 'Geist', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .mono { font-family: 'Geist Mono', monospace; }
+        .border-zinc-800 { border-color: #27272A; }
+        .bg-zinc-900 { background-color: #18181B; }
+        .bg-zinc-950 { background-color: #09090B; }
+        .text-indigo-accent { color: #4F46E5; }
+        .pipeline-arrow {
+            position: relative;
+        }
+        .pipeline-arrow::after {
+            content: '→';
+            position: absolute;
+            right: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4F46E5;
+            font-family: 'Geist Mono';
+        }
+    </style>
 </head>
-<body>
-
-<h1>Welcome to My very 1st HTML Page for EggDust</h1>
-  
-
-<h2>Links and Images</h2>
-
-<img src="/images/OldMan.svg" alt="Old Man">
-<img src="/images/AlfsTripleHeadSimplified.svg" alt="Triple Head">
-
-</body>
-</html>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center w-full px-gutter py-4 sticky top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline-variant">
+<div class="text-body-lg font-mono-code font-bold tracking-tighter text-on-surface dark:text-on-surface">
+            ALEX_DEV_OPS
+        </div>
+<div class="hidden md:flex gap-8">
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#infrastructure">Infrastructure</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#deployments">Deployments</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#monitoring">Monitoring</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#security">Security</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-body-md hover:opacity-80 transition-opacity">
+            Connect
+        </button>
+</nav>
+<main class="max-w-[1280px] mx-auto px-gutter">
+<!-- Hero Section -->
+<section class="mt-24 mb-section-gap flex flex-col items-start">
+<h1 class="text-[5rem] leading-none font-bold tracking-tighter mb-2">Alex Marshall</h1>
+<p class="text-headline-md font-headline-md text-indigo-accent mb-12">Principal DevOps Engineer</p>
+<!-- CI/CD Pipeline Diagram -->
+<div class="w-full bg-zinc-900 border border-zinc-800 p-12 rounded-lg overflow-x-auto">
+<div class="flex flex-nowrap min-w-max items-center justify-between gap-12">
+<!-- Build -->
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">BUILD</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">NODE_V20_PROD</span>
+</div>
+<!-- Test -->
+<div class="pipeline-arrow flex flex-col items-center gap-4">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-green-500"></span>
+<span class="mono text-primary text-mono-label font-bold">TEST</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">JEST_UNIT_98%</span>
+</div>
+<!-- Security Scan -->
+<div class="pipeline-arrow flex flex-col items-center gap-4">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-amber-500"></span>
+<span class="mono text-primary text-mono-label font-bold">SECURITY SCAN</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">SNYK_VULN_0</span>
+</div>
+<!-- Deploy -->
+<div class="pipeline-arrow flex flex-col items-center gap-4">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-green-500"></span>
+<span class="mono text-primary text-mono-label font-bold">DEPLOY</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">K8S_BLUE_GREEN</span>
+</div>
+<!-- Monitor -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-green-500"></span>
+<span class="mono text-primary text-mono-label font-bold">MONITOR</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">PROM_STABLE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Cloud Platforms -->
+<section class="mb-section-gap bg-zinc-900 border border-zinc-800 p-12 rounded-lg">
+<h2 class="text-headline-md font-headline-md mb-8 text-on-surface">Platform Stack</h2>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div class="p-6 border border-zinc-800 bg-zinc-950 hover:border-primary transition-colors cursor-default">
+<p class="mono text-on-surface font-bold mb-1">AWS</p>
+<p class="mono text-[11px] text-on-surface-variant">Cloud Provider</p>
+</div>
+<div class="p-6 border border-zinc-800 bg-zinc-950 hover:border-primary transition-colors cursor-default">
+<p class="mono text-on-surface font-bold mb-1">GCP</p>
+<p class="mono text-[11px] text-on-surface-variant">Data Pipeline</p>
+</div>
+<div class="p-6 border border-zinc-800 bg-zinc-950 hover:border-primary transition-colors cursor-default">
+<p class="mono text-on-surface font-bold mb-1">Azure</p>
+<p class="mono text-[11px] text-on-surface-variant">Enterprise AD</p>
+</div>
+<div class="p-6 border border-zinc-800 bg-zinc-950 hover:border-primary transition-colors cursor-default">
+<p class="mono text-on-surface font-bold mb-1">Kubernetes</p>
+<p class="mono text-[11px] text-on-surface-variant">Orchestration</p>
+</div>
+<div class="p-6 border border-zinc-800 bg-zinc-950 hover:border-primary transition-colors cursor-default">
+<p class="mono text-on-surface font-bold mb-1">Terraform</p>
+<p class="mono text-[11px] text-on-surface-variant">IaC Strategy</p>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="mb-section-gap">
+<h2 class="text-display-lg font-display-lg mb-12">Featured Operations</h2>
+<div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-gutter items-start">
+<!-- Main Project 01 -->
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 h-full flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<h3 class="text-headline-md font-headline-md">Multi-Region K8S Mesh</h3>
+<span class="mono text-[12px] text-primary border border-primary px-3 py-1 rounded-full">ACTIVE</span>
+</div>
+<div class="mb-8 overflow-hidden rounded-xl border border-zinc-800">
+<img alt="Global Infrastructure Mesh" class="w-full h-[400px] object-cover filter grayscale hover:grayscale-0 transition-all duration-700" data-alt="A professional high-tech visualization of a global cloud infrastructure network map. The scene features glowing interconnected nodes across a dark world map, representing multi-region Kubernetes clusters. The aesthetic is clean and technical, using a palette of deep blacks, zinc grays, and sharp indigo lines to convey a sense of massive scale and reliability in a modern DevOps environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAHLIzA0uBYJqfZjxXXNWQ2YaNTiXuzOKBRQbN7uhhbV2Ks3rBu4S5IBOnqBEXHhCuOJwgqX4ZXY96aKAN6N2Fh5kuIef7J7SScEJPhdFm7wnx3pnoBcSgpSI7eflcmcpdHQ_CZhyJ2ED7IA_Tq7eHsdds9eRi4eTCjyTKo3EjIh9o-PkpOvKHequsw-PeLKySaX0_zM9DSRrzug_fEx4Kt09nu5MYYIFgVgQcDixLa1dY6QYULcOo5-BZT8n6iG0MTdpA0irOFI8"/>
+</div>
+<p class="text-body-lg text-on-surface-variant mb-6">
+                            Engineered a zero-trust service mesh across three AWS regions using Istio and Terraform. 
+                            Reduced inter-service latency by 40% while implementing automated failover protocols that 
+                            guarantee [metric] uptime for core microservices.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">Terraform</span>
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">Istio</span>
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">EKS</span>
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">Go</span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-lg font-body-md hover:opacity-90 transition-all">Live Demo</button>
+<button class="border border-zinc-700 px-6 py-3 rounded-lg font-body-md text-on-surface hover:border-primary transition-all">View Code</button>
+</div>
+</div>
+<!-- Secondary Project / Specs -->
+<div class="flex flex-col gap-gutter">
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+<h3 class="text-headline-md font-headline-md mb-4">Auto-Scaling ML Pipeline</h3>
+<p class="text-body-md text-on-surface-variant mb-6">
+                            Serverless processing engine handling 10TB+ daily telemetry data using GCP Dataflow.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">Python</span>
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">GCP</span>
+</div>
+<button class="w-full border border-zinc-700 px-4 py-2 rounded-lg font-body-md text-on-surface hover:border-primary transition-all">Case Study</button>
+</div>
+<div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+<h3 class="text-headline-md font-headline-md mb-4">Observed.io Integration</h3>
+<p class="text-body-md text-on-surface-variant mb-6">
+                            Custom Prometheus exporter for legacy mainframe metrics with Grafana visualization.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">Prometheus</span>
+<span class="mono text-mono-label px-3 py-1 bg-primary/10 text-primary border border-primary/20">Rust</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications -->
+<section class="mb-section-gap">
+<h2 class="text-headline-md font-headline-md mb-8">Professional Validation</h2>
+<div class="flex flex-col border-t border-zinc-800">
+<div class="flex items-center justify-between py-6 border-b border-zinc-800">
+<div>
+<h4 class="font-bold text-lg">AWS Certified Solutions Architect – Professional</h4>
+<p class="text-on-surface-variant font-body-md">Amazon Web Services</p>
+</div>
+<span class="mono text-[12px] text-primary border border-primary px-4 py-1">ACTIVE</span>
+</div>
+<div class="flex items-center justify-between py-6 border-b border-zinc-800">
+<div>
+<h4 class="font-bold text-lg">Certified Kubernetes Administrator (CKA)</h4>
+<p class="text-on-surface-variant font-body-md">Cloud Native Computing Foundation</p>
+</div>
+<span class="mono text-[12px] text-primary border border-primary px-4 py-1">ACTIVE</span>
+</div>
+<div class="flex items-center justify-between py-6 border-b border-zinc-800">
+<div>
+<h4 class="font-bold text-lg">HashiCorp Certified: Terraform Associate</h4>
+<p class="text-on-surface-variant font-body-md">HashiCorp</p>
+</div>
+<span class="mono text-[12px] text-primary border border-primary px-4 py-1">ACTIVE</span>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="mb-section-gap">
+<p class="text-body-lg text-on-surface-variant mb-4">Ready to optimize your infrastructure?</p>
+<a class="text-display-lg text-indigo-accent font-bold hover:opacity-80 transition-opacity block mb-12" href="mailto:alex@marshall.dev">
+                alex@marshall.dev
+            </a>
+<div class="flex gap-12">
+<a class="flex items-center gap-2 group" href="#">
+<span class="mono text-on-surface group-hover:text-primary transition-colors">GITHUB</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 group" href="#">
+<span class="mono text-on-surface group-hover:text-primary transition-colors">LINKEDIN</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 group" href="#">
+<span class="mono text-on-surface group-hover:text-primary transition-colors">TWITTER</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex justify-between items-center w-full px-gutter py-8 mt-section-gap border-t border-outline-variant dark:border-outline-variant">
+<div class="text-mono-label font-mono-label text-on-surface">
+            2024 SYSTEM_RESOURCES_OFFLINE
+        </div>
+<div class="flex gap-8">
+<a class="text-mono-label font-mono-label text-on-surface-variant hover:text-primary transition-colors" href="#">Changelog</a>
+<a class="text-mono-label font-mono-label text-on-surface-variant hover:text-primary transition-colors" href="#">Uptime</a>
+<a class="text-mono-label font-mono-label text-on-surface-variant hover:text-primary transition-colors" href="#">Documentation</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the pipeline boxes
+        document.querySelectorAll('.pipeline-arrow').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('.border-primary').classList.add('bg-primary/10');
+            });
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.border-primary').classList.remove('bg-primary/10');
+            });
+        });
+    </script>
+</body></html>
