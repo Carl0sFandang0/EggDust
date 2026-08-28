@@ -1,58 +1,299 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Example Page</title>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EggDust</title>
+
+<!-- tailwindcss stuff below is legit. Carl. -->
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#4f46e5",
+                "tertiary": "#ffb695",
+                "surface-container-lowest": "#0e0d16",
+                "primary-fixed-dim": "#c3c0ff",
+                "on-secondary": "#303033",
+                "tertiary-fixed": "#ffdbcc",
+                "surface-tint": "#c3c0ff",
+                "surface-container": "#1f1f28",
+                "on-tertiary-container": "#ffd2be",
+                "tertiary-container": "#a44100",
+                "on-secondary-fixed": "#1b1b1e",
+                "surface": "#13121b",
+                "on-primary-fixed-variant": "#3323cc",
+                "on-primary-fixed": "#0f0069",
+                "on-tertiary-fixed": "#351000",
+                "on-tertiary": "#571f00",
+                "inverse-on-surface": "#302f39",
+                "surface-container-low": "#1b1b24",
+                "on-secondary-container": "#b6b4b8",
+                "surface-dim": "#13121b",
+                "inverse-surface": "#e4e1ee",
+                "surface-bright": "#393842",
+                "on-tertiary-fixed-variant": "#7b2f00",
+                "on-error": "#690005",
+                "on-surface-variant": "#c7c4d8",
+                "primary-fixed": "#e2dfff",
+                "secondary": "#c8c5ca",
+                "outline-variant": "#464555",
+                "surface-container-highest": "#35343e",
+                "surface-variant": "#35343e",
+                "secondary-fixed": "#e4e1e6",
+                "inverse-primary": "#4d44e3",
+                "surface-container-high": "#2a2933",
+                "tertiary-fixed-dim": "#ffb695",
+                "on-background": "#e4e1ee",
+                "background": "#13121b",
+                "on-error-container": "#ffdad6",
+                "on-surface": "#e4e1ee",
+                "outline": "#918fa1",
+                "on-secondary-fixed-variant": "#47464a",
+                "on-primary-container": "#dad7ff",
+                "secondary-fixed-dim": "#c8c5ca",
+                "error": "#ffb4ab",
+                "on-primary": "#1d00a5",
+                "error-container": "#93000a",
+                "secondary-container": "#47464a",
+                "primary": "#c3c0ff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "asymmetric-split": "66% 33%",
+                "container-max": "1280px",
+                "section-gap": "120px",
+                "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                "headline-md": ["Geist"],
+                "display-lg": ["Geist"],
+                "mono-code": ["Geist Mono"],
+                "body-md": ["Geist"],
+                "mono-label": ["Geist Mono"],
+                "body-lg": ["Geist"],
+                "display-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "mono-code": ["14px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "mono-label": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+
+
 <style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-h1 { color: darkblue; }
-p { font-size: 16px; }
-a { color: green; text-decoration: none; }
-a:hover { text-decoration: underline; }
-table { border-collapse: collapse; width: 50%; }
-table, th, td { border: 1px solid black; padding: 8px; }
-</style>
+        body {
+            background-color: #09090B;
+            color: #e4e1ee;
+            font-family: 'Geist', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .mono { font-family: 'Geist Mono', monospace; }
+        .border-zinc-800 { border-color: #27272A; }
+        .bg-zinc-900 { background-color: #18181B; }
+        .bg-zinc-950 { background-color: #09090B; }
+        .text-indigo-accent { color: #4F46E5; }
+        .pipeline-arrow {
+            position: relative;
+        }
+        .pipeline-arrow::after {
+            content: '→';
+            position: absolute;
+            right: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4F46E5;
+            font-family: 'Geist Mono';
+        }
+    </style>
+
+
 </head>
-<body>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
 
-<h1>Welcome to My HTML Page</h1>
-<p>This is a simple paragraph with a <strong>bold</strong> word and an <em>emphasized</em> word.</p>
 
-<h2>Links and Images</h2>
-<p>Visit <a href="https://www.example.com" target="_blank">Example Website</a></p>
-<img src="https://via.placeholder.com/150" alt="Sample Image">
+<!-- TopNavBar -->
 
-<h2>List Example</h2>
-<ul>
-<li>HTML Basics</li>
-<li>CSS Styling</li>
-<li>JavaScript Interactivity</li>
-</ul>
+<nav class="flex justify-between items-center w-full px-gutter py-4 sticky top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline-variant">
+<div class="text-body-lg font-mono-code font-bold tracking-tighter text-on-surface dark:text-on-surface">             EggDust        </div><div class="hidden md:flex gap-8">
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#link1">Link1 heading</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#link2">Link2 heading</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#link3">Link3 heading</a>
+<a class="text-body-md font-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#link4">Link4 heading</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-body-md hover:opacity-80 transition-opacity">
+            Connect. Disabled for now..
+        </button>
+</nav>
+<main class="max-w-[1280px] mx-auto px-gutter">
 
-<h2>Table Example</h2>
-<table>
-<tr>
-<th>Language</th>
-<th>Usage</th>
-</tr>
-<tr>
-<td>HTML</td>
-<td>Structure</td>
-</tr>
-<tr>
-<td>CSS</td>
-<td>Styling</td>
-</tr>
-</table>
+<!-- Hero Section -->
+<section class="mt-24 mb-section-gap flex flex-col items-start">
+<h1 class="text-[5rem] leading-none font-bold tracking-tighter mb-2">Cral</h1>
+<p class="text-headline-md font-headline-md text-indigo-accent mb-12">EggDust creator</p>
 
-<h2>Form Example</h2>
-<form action="#" method="post">
-<label for="name">Name:</label><br>
-<input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-<input type="submit" value="Submit">
-</form>
 
-</body>
-</html>
+<!-- CI/CD Pipeline Diagram -->
+<div class="w-full bg-zinc-900 border border-zinc-800 p-12 rounded-lg overflow-x-auto">
+<div class="flex flex-nowrap min-w-max items-center justify-between gap-12">
+
+<!-- GALLERIES -->
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">GALLERY 1</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">Title description</span>
+</div>
+
+
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">GALLERY 1</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">Title description</span>
+</div>
+
+
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">GALLERY 1</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">Title description</span>
+</div>
+
+
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">GALLERY 1</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">Title description</span>
+</div>
+
+
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">GALLERY 1</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">Title description</span>
+</div>
+
+
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">GALLERY 1</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">Title description</span>
+</div>
+
+
+<div class="pipeline-arrow flex flex-col items-center gap-4 group">
+<div class="w-48 h-24 border border-primary flex items-center justify-center relative bg-zinc-950">
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="mono text-primary text-mono-label font-bold">GALLERY 1</span>
+</div>
+<span class="mono text-[10px] text-on-surface-variant">Title description</span>
+</div>
+
+
+
+
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section class="mb-section-gap">
+<p class="text-body-lg text-on-surface-variant mb-4">You want to contact me?</p>
+<a class="text-display-lg text-indigo-accent font-bold hover:opacity-80 transition-opacity block mb-12" href="mailto:myemail@hotmail.com">
+                myemail@hotmail.com
+            </a>
+<div class="flex gap-12">
+<a class="flex items-center gap-2 group" href="#">
+<span class="mono text-on-surface group-hover:text-primary transition-colors">SOCIAL MEDIA 1</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 group" href="#">
+<span class="mono text-on-surface group-hover:text-primary transition-colors">SOCIAL MEDIA 2</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 group" href="#">
+<span class="mono text-on-surface group-hover:text-primary transition-colors">SOCIAL MEDIA 3</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex justify-between items-center w-full px-gutter py-8 mt-section-gap border-t border-outline-variant dark:border-outline-variant">
+<div class="text-mono-label font-mono-label text-on-surface">
+            This is some footer text. EggDust. 2026
+        </div>
+<div class="flex gap-8">
+<a class="text-mono-label font-mono-label text-on-surface-variant hover:text-primary transition-colors" href="#">A link to something</a>
+<a class="text-mono-label font-mono-label text-on-surface-variant hover:text-primary transition-colors" href="#">A link to something else</a>
+<a class="text-mono-label font-mono-label text-on-surface-variant hover:text-primary transition-colors" href="#">A link to something more</a>
+</div>
+</footer>
+
+<script>
+        // Micro-interaction for the pipeline boxes
+        document.querySelectorAll('.pipeline-arrow').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('.border-primary').classList.add('bg-primary/10');
+            });
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.border-primary').classList.remove('bg-primary/10');
+            });
+        });
+    </script>
+</body></html>
