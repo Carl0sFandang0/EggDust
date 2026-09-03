@@ -1,1 +1,195 @@
+<!DOCTYPE html>
 
+<html class="dark" lang="en"><head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EggDust.co.uk. Trial Website.</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#4f46e5",
+                        "tertiary": "#ffb695",
+                        "surface-container-lowest": "#0e0d16",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-secondary": "#303033",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-tint": "#c3c0ff",
+                        "surface-container": "#1f1f28",
+                        "on-tertiary-container": "#ffd2be",
+                        "tertiary-container": "#a44100",
+                        "on-secondary-fixed": "#1b1b1e",
+                        "surface": "#13121b",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-primary-fixed": "#0f0069",
+                        "on-tertiary-fixed": "#351000",
+                        "on-tertiary": "#571f00",
+                        "inverse-on-surface": "#302f39",
+                        "surface-container-low": "#1b1b24",
+                        "on-secondary-container": "#b6b4b8",
+                        "surface-dim": "#13121b",
+                        "inverse-surface": "#e4e1ee",
+                        "surface-bright": "#393842",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c7c4d8",
+                        "primary-fixed": "#e2dfff",
+                        "secondary": "#c8c5ca",
+                        "outline-variant": "#464555",
+                        "surface-container-highest": "#35343e",
+                        "surface-variant": "#35343e",
+                        "secondary-fixed": "#e4e1e6",
+                        "inverse-primary": "#4d44e3",
+                        "surface-container-high": "#2a2933",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-background": "#e4e1ee",
+                        "background": "#13121b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e4e1ee",
+                        "outline": "#918fa1",
+                        "on-secondary-fixed-variant": "#47464a",
+                        "on-primary-container": "#dad7ff",
+                        "secondary-fixed-dim": "#c8c5ca",
+                        "error": "#ffb4ab",
+                        "on-primary": "#1d00a5",
+                        "error-container": "#93000a",
+                        "secondary-container": "#47464a",
+                        "primary": "#c3c0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "asymmetric-split": "66% 33%",
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "mono-code": ["Geist Mono"],
+                        "body-md": ["Geist"],
+                        "mono-label": ["Geist Mono"],
+                        "body-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "mono-code": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090B;
+            color: #e4e1ee;
+            font-family: 'Geist', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .mono {
+            font-family: 'Geist Mono', monospace;
+        }
+
+        .border-zinc-800 {
+            border-color: #27272A;
+        }
+
+        .bg-zinc-900 {
+            background-color: #18181B;
+        }
+
+        .bg-zinc-950 {
+            background-color: #09090B;
+        }
+
+        .text-indigo-accent {
+            color: #4F46E5;
+        }
+
+        .pipeline-arrow {
+            position: relative;
+        }
+
+            .pipeline-arrow::after {
+                content: ' ';
+                position: absolute;
+                right: -24px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #4F46E5;
+                font-family: 'Geist Mono';
+            }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- TopNavBar -->
+    <nav class="flex justify-between items-center w-full px-gutter py-4 sticky top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline-variant">
+        <div class="text-[3rem] leading-none font-bold tracking-tighter text-indigo-accent ">
+            What is this...
+        </div>
+
+        <div class="hidden md:flex gap-8"></div>
+
+        <a href="../index.html"
+           class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-body-md hover:opacity-60 transition-opacity">
+            HOME
+        </a>
+
+       
+
+    </nav>
+<main class="max-w-[1280px] mx-auto px-gutter">
+
+<!-- Hero Section -->
+    <section class="mt-24 mb-section-gap flex flex-col items-start">
+
+        <img src="small dusty egg.svg"><br /><br />
+
+        I am creating a dark themed website that is fast loading, uncomplicated and responsive.<br /><br />
+        The overarching theme of the website is around the play between egg and dust where the egg represents life and beginnings, while the dust represents death and endings.<br /><br />
+        The galleries are my own personal comments and experience of transition between good and bad, life and death, starts and ends.<br /><br />
+        Each gallery has goose eggs representing the essence of the gallery - carved, drawn and / or painted.<br /><br />
+        Hope you enjoy.<br />
+        Take Care.<br />
+        Carl.<br />
+
+
+
+
+    </section>
+    </main>
+
+    <script>
+            // Micro-interaction for the pipeline boxes
+            document.querySelectorAll('.pipeline-arrow').forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.querySelector('.border-primary').classList.add('bg-primary/10');
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.querySelector('.border-primary').classList.remove('bg-primary/10');
+                });
+            });
+        </script>
+    </body></html>
