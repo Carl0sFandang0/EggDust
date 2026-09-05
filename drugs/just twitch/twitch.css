@@ -1,0 +1,33 @@
+.random-twitch {
+    display: inline-block;
+}
+
+.shake-once {
+    animation: shake 0.2s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0,0) scale(2);
+    }
+
+    20% {
+        transform: translate(-2px,1px);
+    }
+
+    40% {
+        transform: translate(2px,-1px);
+    }
+
+    60% {
+        transform: translate(-1px,-1px);
+    }
+
+    80% {
+        transform: translate(1px,2px);
+    }
+
+    100% {
+        transform: translate(0,0) scale(1);
+    }
+}

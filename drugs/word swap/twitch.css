@@ -1,0 +1,4 @@
+#glitch-text {
+    display: inline-block;
+    transition: transform 0.05s ease-out; /* Smooths out the rapid jitter */
+}
