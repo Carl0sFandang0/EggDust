@@ -1,4 +1,4 @@
-const elements = document.querySelectorAll('.random-twitch');
+const elements = document.querySelectorAll('.overlay-svg');
 
 function startRandomLoop(element) {
     const min = parseInt(element.getAttribute('data-min')) || 500;
@@ -6,9 +6,11 @@ function startRandomLoop(element) {
 
     function shake() {
         element.classList.add('shake-once');
+        element.style.visibility = 'visible';
 
         element.addEventListener('animationend', () => {
             element.classList.remove('shake-once');
+            element.style.visibility = 'hidden';
         }, { once: true });
 
         const nextDelay = Math.random() * (max - min) + min;
