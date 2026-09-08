@@ -1,5 +1,10 @@
-const imageUrls = ['despair1.svg', 'despair2.svg', 'despair3.svg', 'despair4.svg', 'despair5.svg', 'despair6.svg', 'despair7.svg', 'despair8.svg', 'despair9.svg', 'despair10.svg', 'despair11.svg', 'despair12.svg', 'despair13.svg', 'despair14.svg', 'despair15.svg', 'despair16.svg', 'despair17.svg', 'despair18.svg', 'despair19.svg', 'despair20.svg'];
-const preloadedImages = [];
+
+const imageUrls = []; 
+
+for (cnt = 1; cnt < 71; cnt++) {
+    imageUrls.push("despair" + cnt + ".svg");  // the array will dynamically grow
+}
+
 let loadedCount = 0;
 
 function preloadImages(urls, callback) {
@@ -11,7 +16,7 @@ function preloadImages(urls, callback) {
             if (loadedCount === urls.length) {
                 callback(); // Starts your animation when all images are ready 
             }
-        }; preloadedImages.push(img);
+        }; 
     });
 }
 

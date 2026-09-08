@@ -6,16 +6,12 @@ function sleep(mycnt, mypause, myFile) {
 }
 
 
-for (cnt = 1; cnt < 21; cnt++) {
+for (cnt = 1; cnt < imageUrls.length + 1  ; cnt++) {
 
     sleep(cnt, pause, imageUrls[cnt-1]);
 
 }
 
-for (cnt = 21; cnt < 41; cnt++) {
 
-    sleep(cnt, pause, imageUrls[40 - cnt]);
-
-}
 
 
