@@ -19,7 +19,3 @@ function preloadImages(urls, callback) {
 preloadImages(imageUrls, startAnimation);
 
 
-function startAnimation() {
-    // Your animation code goes here 
-    document.getElementById("PreloadDone").textContent = "" ;
-}
