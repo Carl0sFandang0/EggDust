@@ -1,18 +1,22 @@
 const pause = 50;
 
-function sleep(mycnt, mypause, myChar) {
-    return new Promise(resolve => setTimeout(function () { document.getElementById("image-container").src = "despair" + myChar + ".svg"; }, mycnt * mypause));
+var myElement = document.getElementById("test")
+myElement.textContent = imageUrls[0];
+
+
+function sleep(mycnt, mypause, myFile) {
+    return new Promise(resolve => setTimeout(function () { document.getElementById("image-container").src = myFile; }, mycnt * mypause));
 }
 
 for (cnt = 1; cnt < 21; cnt++) {
 
-    sleep(cnt, pause, cnt.toFixed(0));
+    sleep(cnt, pause, imageUrls[cnt-1]);
 
 }
 
 for (cnt = 21; cnt < 41; cnt++) {
 
-    sleep(cnt, pause, (41 - cnt).toFixed(0));
+    sleep(cnt, pause, imageUrls[41 - cnt]);
 
 }
 
