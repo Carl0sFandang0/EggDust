@@ -1,7 +1,7 @@
 
 const imageUrls = []; 
 
-for (cnt = 1; cnt < 1001; cnt++) {
+for (cnt = 1; cnt < 991; cnt++) {
     imageUrls.push("output_" + cnt + ".svg");  // the array will dynamically grow
 }
 
