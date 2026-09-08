@@ -1,6 +1,7 @@
 const imageUrls = ['despair1.svg', 'despair2.svg', 'despair3.svg', 'despair4.svg', 'despair5.svg', 'despair6.svg', 'despair7.svg', 'despair8.svg', 'despair9.svg', 'despair10.svg', 'despair11.svg', 'despair12.svg', 'despair13.svg', 'despair14.svg', 'despair15.svg', 'despair16.svg', 'despair17.svg', 'despair18.svg', 'despair19.svg', 'despair20.svg'];
 const preloadedImages = [];
 let loadedCount = 0;
+
 function preloadImages(urls, callback) {
     urls.forEach((url) => {
         const img = new Image();
@@ -14,11 +15,11 @@ function preloadImages(urls, callback) {
     });
 }
 
-// Usage 
+
 preloadImages(imageUrls, startAnimation);
 
 
 function startAnimation() {
-    console.log("All images loaded. Animation can start!");
     // Your animation code goes here 
+    document.getElementById("PreloadDone").textContent = "" ;
 }

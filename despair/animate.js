@@ -1,12 +1,10 @@
 const pause = 50;
 
-var myElement = document.getElementById("test")
-myElement.textContent = imageUrls[0];
-
 
 function sleep(mycnt, mypause, myFile) {
     return new Promise(resolve => setTimeout(function () { document.getElementById("image-container").src = myFile; }, mycnt * mypause));
 }
+
 
 for (cnt = 1; cnt < 21; cnt++) {
 
@@ -16,7 +14,8 @@ for (cnt = 1; cnt < 21; cnt++) {
 
 for (cnt = 21; cnt < 41; cnt++) {
 
-    sleep(cnt, pause, imageUrls[41 - cnt]);
+    sleep(cnt, pause, imageUrls[40 - cnt]);
 
 }
+
 

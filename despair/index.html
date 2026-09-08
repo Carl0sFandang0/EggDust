@@ -103,6 +103,11 @@
     </script>
     <script src="preload.js"></script>
     <style>
+        .my-span {
+            height: 17px;
+            display: inline-block;
+        }
+
         body {
             background-color: #09090B;
             color: #e4e1ee;
@@ -147,19 +152,23 @@
             HOME
         </a>
 
-
-
     </nav>
     <main class="max-w-[1280px] mx-auto px-gutter">
 
         <!-- Hero Section -->
         <section class="mt-24 mb-section-gap flex flex-col items-start">
 
+            <span class="my-span" id="PreloadDone" >Preloading</span>
+
             <img id="image-container" src="despair1.svg" />
 
         </section>
     </main>
 
+    
+
     <script src="animate.js"></script>
 
-</body></html>
+</body>
+
+</html>
