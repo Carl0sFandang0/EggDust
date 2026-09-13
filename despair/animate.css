@@ -1,5 +1,6 @@
 .animation-window {
-    width: 630px; /* Width of exactly ONE frame */
+    /*width: 630px; /* Width of exactly ONE frame */
+    width: 100%;
     height: 800px; /* Height of the frame */
     overflow: hidden;
     position: relative;
@@ -10,5 +11,10 @@
     position: absolute;
     will-change: transform;
     transform: translateX(0px);
-    min-width: 63002px; /* need this to stop svg shrinking to fit element */
+    /*min-width: 63002px; /* need this to stop svg shrinking to fit element */
+    min-width: 10000%;
+}
+
+.full-width-element {
+    width: 100vw;
 }
