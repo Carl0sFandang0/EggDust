@@ -1,9 +1,8 @@
 .animation-window {
-    width: 85353px; /* Width of exactly ONE frame ... no this shrinks the SVG so do #frames * frame width*/
-    height: 10836px; /* Height of the frame */
-    /*overflow: hidden; /* Hide the other 9 frames */
+    width: 630px; /* Width of exactly ONE frame */
+    height: 800px; /* Height of the frame */
+    overflow: hidden;
     position: relative;
-    clip-path: xywh(0px 0px 853.6px 10836px);
 }
 
 .svg-filmstrip {
@@ -11,4 +10,5 @@
     position: absolute;
     will-change: transform;
     transform: translateX(0px);
+    min-width: 63002px; /* need this to stop svg shrinking to fit element */
 }
