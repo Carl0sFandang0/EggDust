@@ -21,6 +21,11 @@
     animation: shake 0.8s ease-in-out;
 }
 
+.myFont {
+    font-family: "Chiller","Bradley Hand ITC", "Tom's Handwriting";
+    font-size:  larger ;
+}
+
 @keyframes shake {
     0% {
         transform: translate(0,0) scale(1.5);
