@@ -1,6 +1,5 @@
 const filmstrip = document.getElementById('filmstrip');
-//const frameWidth = document.getElementById("screenWidth").offsetWidth -48 ;  // 630px ; // Width of one frame in pixels
-let frameWidth = 630;  // 630px ; // Width of one frame in pixels
+let frameWidth = 320;  // 630px ; // Width of one frame in pixels
 const totalFrames = 100; // Total images side-by-side
 const endloopFrame = 80; // endloop cycles between here and totalFrames
 let currentFrame = 0;

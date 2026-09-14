@@ -1,7 +1,6 @@
 .animation-window {
-    /*width: 630px; /* Width of exactly ONE frame */
-    width: 100%;
-    height: 800px; /* Height of the frame */
+    width: 100%; /* Width of the screen... stretch SVG to suite */
+    height: 800px; /* clip the animation at this point */
     overflow: hidden;
     position: relative;
 }
@@ -11,10 +10,5 @@
     position: absolute;
     will-change: transform;
     transform: translateX(0px);
-    /*min-width: 63002px; /* need this to stop svg shrinking to fit element */
-    min-width: 10000%;
-}
-
-.full-width-element {
-    width: 100vw;
+    min-width: 10000%; /* ie (#frames * width)...need this to stretch svg to fit screen width * #frames */
 }
