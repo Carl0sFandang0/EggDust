@@ -13,7 +13,7 @@ let xPosition = 0;
 
 const observer = new ResizeObserver(entries => {
     for (let entry of entries) {
-        frameWidth = window.innerWidth - 63;
+        frameWidth = document.querySelector('.svg-filmstrip').clientWidth / 100
     }
 });
 
