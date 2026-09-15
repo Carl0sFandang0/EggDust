@@ -1,0 +1,18 @@
+.animation-window {
+    width: 600px;
+    min-width: 600px;
+    /* width & min-width fixes width at large and small screens */
+    height: 2000px ; /* clip the animation at this point */
+    overflow: hidden;
+    position: relative;
+}
+
+.svg-filmstrip {
+    display: block;
+    position: absolute;
+    will-change: transform;
+    transform: translateX(0px);
+    min-width: 3000px; /* ie ie 5 frames * 600px */
+    width: 3000px; /* ie 5 frames * 600px */
+    /* width & min-width fixes width at large and small screens */
+}
