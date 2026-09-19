@@ -160,26 +160,25 @@
        
 
     </nav>
-<main class="max-w-[1280px] mx-auto px-gutter">
+    <main class="max-w-[1280px] mx-auto px-gutter grid grid-cols-1 [@media(min-aspect-ratio:1/1)]:grid-cols-2">
 
-<!-- Hero Section -->
-    <section class="mt-24 mb-section-gap flex flex-col items-start">
-
-        <img src="large dusty egg.svg">
+        <!-- Hero Section -->
 
 
-    </section>
+
+        <div class="text-[1.5rem] tracking-tighter text-indigo-accent">
+            Beginings and endings<br />
+            Life and death<br />
+            Hope and despair<br />
+            Black and white<br />
+       
+
+        </div>
+
+        <div>
+
+            <img class="object-fit h-[calc(100vh-80px)]" src="eggeye.svg">
+        </div>
     </main>
 
-    <script>
-            // Micro-interaction for the pipeline boxes
-            document.querySelectorAll('.pipeline-arrow').forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    item.querySelector('.border-primary').classList.add('bg-primary/10');
-                });
-                item.addEventListener('mouseleave', () => {
-                    item.querySelector('.border-primary').classList.remove('bg-primary/10');
-                });
-            });
-        </script>
     </body></html>
