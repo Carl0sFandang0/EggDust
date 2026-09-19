@@ -144,33 +144,19 @@
         </a>
     </nav>
 
-    <main class="mx-auto px-gutter">
-        <div class="max-w-[400px] max-h-[calc(100vh_-_160px)] bg-zinc-900 border border-zinc-800 p-2 rounded-lg overflow-x-auto overflow-y-auto">
-            <div>
+    <main class="mx-auto px-gutter flex">
+        
+        <div class="max-w-[400px] max-h-[calc(100vh_-_80px)] bg-zinc-900  p-2 rounded-lg overflow-x-auto overflow-y-auto">
+            <div class="w-[800px]">
                 <img src="text.svg" alt="">
             </div>
+
+        </div>
+
+        <div class="w-[calc(100vw_-_400px)] h-[calc(100vh_-_80px)] bg-zinc-900 ">
+            <img class="object-contain overflow-hidden relative top-0 left-0" src="background.svg" alt="">
         </div>
     </main>
 
 
-<!-- Footer -->
-<footer class="flex justify-between items-center w-full px-gutter py-8 mt-section-gap border-t border-outline-variant dark:border-outline-variant">
-<div class="text-mono-label font-mono-label text-on-surface">
-            2026 EggDust.co.uk
-        </div>
-
-</footer>
-
-
-<script>
-        // Micro-interaction for the pipeline boxes
-        document.querySelectorAll('.pipeline-arrow').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.querySelector('.border-primary').classList.add('bg-primary/10');
-            });
-            item.addEventListener('mouseleave', () => {
-                item.querySelector('.border-primary').classList.remove('bg-primary/10');
-            });
-        });
-    </script>
 </body></html>
