@@ -104,11 +104,15 @@
 <!-- MAIN -->
     <main class="bg-zinc-900">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 4</div>
+        <div class="grid grid-cols-1 [@media(min-aspect-ratio:1/1)]:grid-cols-4 h-[calc(100vh_-_80px)]">
+            <div class="overflow-x-auto overflow-y-auto">
+                <img src="text.svg" alt="">
+            </div>
+            <div class="col-span-3 overflow-hidden">
+
+                <img class="object-contain" src="background.svg" alt="">
+
+            </div>
         </div>
 
     </main>
