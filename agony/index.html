@@ -17,52 +17,10 @@
                 extend: {
                     "colors": {
                         "primary-container": "#4f46e5",
-                        "tertiary": "#ffb695",
-                        "surface-container-lowest": "#0e0d16",
-                        "primary-fixed-dim": "#c3c0ff",
-                        "on-secondary": "#303033",
-                        "tertiary-fixed": "#ffdbcc",
-                        "surface-tint": "#c3c0ff",
-                        "surface-container": "#1f1f28",
-                        "on-tertiary-container": "#ffd2be",
-                        "tertiary-container": "#a44100",
-                        "on-secondary-fixed": "#1b1b1e",
                         "surface": "#13121b",
-                        "on-primary-fixed-variant": "#3323cc",
-                        "on-primary-fixed": "#0f0069",
-                        "on-tertiary-fixed": "#351000",
-                        "on-tertiary": "#571f00",
-                        "inverse-on-surface": "#302f39",
-                        "surface-container-low": "#1b1b24",
-                        "on-secondary-container": "#b6b4b8",
-                        "surface-dim": "#13121b",
-                        "inverse-surface": "#e4e1ee",
-                        "surface-bright": "#393842",
-                        "on-tertiary-fixed-variant": "#7b2f00",
-                        "on-error": "#690005",
-                        "on-surface-variant": "#c7c4d8",
-                        "primary-fixed": "#e2dfff",
-                        "secondary": "#c8c5ca",
-                        "outline-variant": "#464555",
-                        "surface-container-highest": "#35343e",
-                        "surface-variant": "#35343e",
-                        "secondary-fixed": "#e4e1e6",
-                        "inverse-primary": "#4d44e3",
-                        "surface-container-high": "#2a2933",
-                        "tertiary-fixed-dim": "#ffb695",
-                        "on-background": "#e4e1ee",
                         "background": "#13121b",
-                        "on-error-container": "#ffdad6",
-                        "on-surface": "#e4e1ee",
-                        "outline": "#918fa1",
-                        "on-secondary-fixed-variant": "#47464a",
-                        "on-primary-container": "#dad7ff",
-                        "secondary-fixed-dim": "#c8c5ca",
-                        "error": "#ffb4ab",
-                        "on-primary": "#1d00a5",
-                        "error-container": "#93000a",
-                        "secondary-container": "#47464a",
-                        "primary": "#c3c0ff"
+                        "outline-variant": "#464555",
+                        "outline": "#918fa1"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
@@ -72,10 +30,7 @@
                     },
                     "spacing": {
                         "gutter": "24px",
-                        "asymmetric-split": "66% 33%",
-                        "container-max": "1280px",
-                        "section-gap": "0px",  /*was 120px*/
-                        "margin-mobile": "20px"
+                        "section-gap": "0px"  /*was 120px*/
                     },
                     "fontFamily": {
                         "headline-md": ["Geist"],
@@ -129,6 +84,8 @@
 
     </style>
 </head>
+
+
 <body class="selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
 
 <!-- TopNavBar -->
@@ -144,19 +101,18 @@
         </a>
     </nav>
 
-    <main class="mx-auto px-gutter flex">
+<!-- MAIN -->
+    <main class="bg-zinc-900">
         
-        <div class="w-[400px] h-[calc(100vh_-_90px)] bg-zinc-900  p-2 rounded-lg overflow-x-auto overflow-y-auto">
-            <div class="w-[800px]">
-                <img src="text.svg" alt="" >
-            </div>
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
         </div>
 
-        <div class="w-[calc(100vw_-_400px)] h-[calc(100vh_-_80px)] bg-zinc-900 overflow-hidden">
-            <img class="object-contain" src="background.svg" alt="">
-        </div>
     </main>
 
 
-</body></html>
+</body>
+</html>
