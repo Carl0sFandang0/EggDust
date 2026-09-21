@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EggDust.co.uk.</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#4f46e5",
+                        "surface": "#13121b",
+                        "background": "#13121b",
+                        "outline-variant": "#464555",
+                        "outline": "#918fa1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "0px"  /*was 120px*/
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "mono-code": ["Geist Mono"],
+                        "body-md": ["Geist"],
+                        "mono-label": ["Geist Mono"],
+                        "body-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "mono-code": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+
+</head>
+
+<body class="selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+    <!-- The Header -->
+    <header id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transform transition-transform duration-300 ease-in-out">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl text-indigo-600">MyLogo</div>
+            <nav class="space-x-4">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Page Content (give it padding-top so the header doesn't block it initially) -->
+    <main class="pt-20 min-h-screen bg-gray-50 p-8">
+        <p>Scroll down to hide the header. Scroll up to see it reappear!</p>
+        <!-- Add enough placeholder content here to test scrolling -->
+        <div class="h-[2000px]"></div>
+    </main>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            // Hide header if scrolling down, show if scrolling up
+            if (window.scrollY > lastScrollY) {
+                navbar.classList.add('-translate-y-full');
+                // Slides it up out of view
+            } else {
+                navbar.classList.remove('-translate-y-full');
+                // Slides it back down
+            }
+
+            lastScrollY = window.scrollY;
+        });
+
+    </script>
+
+
+</body>
+
+
+</html>
