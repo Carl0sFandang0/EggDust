@@ -64,4 +64,17 @@ function startAnimation() {
 
 function stopAnimation() { clearInterval(animationTimer); }
 
-startAnimation() ;
+startAnimation();
+
+
+let lastScrollY = window.scrollY;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+navbar.classList.add('-translate-y-full');
+    } else {
+navbar.classList.remove('-translate-y-full');
+    }
+lastScrollY = window.scrollY;
+    });
