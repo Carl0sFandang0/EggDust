@@ -89,7 +89,7 @@
 <body class="selection:bg-primary-container selection:text-on-primary-container">
     <!-- The Header -->
     <header class="fixed top-0 left-0 w-full z-50">
-        <nav  id="fixedNav"  class="flex justify-between items-center w-full px-gutter py-4 top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline-variant">
+        <nav class="flex justify-between items-center w-full px-gutter py-4 top-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline-variant">
             <div class="text-[3rem] leading-none font-bold tracking-tighter text-indigo-accent">
                 <a class="text-indigo-accent" href="../index.html">
                     < Agony
@@ -124,7 +124,6 @@
     <script>
         function updateOffset() {
             const img = document.getElementById('fixedImage');
-            const nav = document.getElementById('fixedNav');
 
             // If screen is wide, margin-top should be 0
             if (window.matchMedia("(min-aspect-ratio: 3/2)").matches) {
@@ -134,8 +133,7 @@
 
             // Otherwise measure the image height
             const h1 = img.getBoundingClientRect().height;
-            const h2 = nav.getBoundingClientRect().height;
-            document.documentElement.style.setProperty('--image-bottom', `${h1 }px`);
+            document.documentElement.style.setProperty('--image-bottom', `${h1}px`);
         }
 
         window.addEventListener('load', updateOffset);
