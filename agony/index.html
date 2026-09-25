@@ -99,7 +99,7 @@
         </nav>
     </header>
 
-    <main class="min-h-screen bg-zinc-900 p-8 relative" style="margin-top: var(--header-bottom);" >
+    <main class="min-h-screen bg-zinc-900 p-8 absolute" >
 
         <!-- FIXED IMAGE -->
         <div class="fixed left-8 w-[90vw]  z-20 pointer-events-none grid grid-cols-1 [@media(min-aspect-ratio:3/2)]:grid-cols-5 mt-[20px]">
@@ -135,7 +135,7 @@
             // Otherwise measure the image height
             const h1 = img.getBoundingClientRect().height;
             const h2 = nav.getBoundingClientRect().height;
-            document.documentElement.style.setProperty('--image-bottom', `${h1 + h2}px`);
+            document.documentElement.style.setProperty('--image-bottom', `${h1 }px`);
         }
 
         window.addEventListener('load', updateOffset);
