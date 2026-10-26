@@ -19,14 +19,13 @@
         };
 
         ws.onmessage = (event) => {
-            console.log("Laptop says:", event.data);
+            //console.log("Laptop says:", event.data);
             document.getElementById("output").innerText = event.data;
         };
     </script>
     <main>
 
-
-        <div id="output" class="text-xl p-4"></div>
+        <h1  id="output" class="text-xl p-4"></h1>
 
     </main>
 
