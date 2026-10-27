@@ -35,10 +35,11 @@
             getLatestIssue();
 
             // Then every 10 seconds
-            setInterval(getLatestIssue, 10000);
+            setInterval(getLatestIssue, 30000);
     </script>
 
     <main>
+        <button onclick="getLatestIssue()">Read Message Now (else update everey 30 seconds)</button>
 
         <h1 id="message" class="text-xl p-4">waiting...</h1>
 
