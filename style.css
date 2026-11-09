@@ -1,0 +1,29 @@
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+
+/* The hero egg is drawn line by line on page load */
+.draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.6s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 0.18s);
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* Shown behind a photo until you add the real image */
+.egg-ph {
+  display: block;
+  width: 46%;
+  aspect-ratio: 4 / 5;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle at 35% 30%, #2d363c, #1a2025 70%);
+  border: 1px solid #2a3238;
+}
+
+:focus-visible { outline: 2px solid #9bc4b8; outline-offset: 3px; }
+
+dialog::backdrop { background: rgba(8, 10, 12, 0.8); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .draw { animation: none; stroke-dashoffset: 0; }
+}

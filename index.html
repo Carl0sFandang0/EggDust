@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EggDust | Drawn and milled goose eggs</title>
+  <meta name="description" content="Goose eggs drawn on and milled with patterns by hand. Browse the work and get in touch.">
+  <meta name="theme-color" content="#12161a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: '#12161a', panel: '#1a2025', line: '#2a3238', shell: '#ece6da', dust: '#98a4a8', glow: '#9bc4b8' },
+          fontFamily: { display: ['Fraunces', 'Georgia', 'serif'], sans: ['"DM Sans"', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-ink text-shell font-sans antialiased">
+
+  <header class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+    <a href="#top" class="font-display text-xl tracking-wide">EggDust</a>
+    <nav class="flex gap-6 text-sm text-dust" aria-label="Main">
+      <a class="hover:text-shell" href="#work">Work</a>
+      <a class="hover:text-shell" href="#about">About</a>
+      <a class="hover:text-shell" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-20 pt-10 md:grid-cols-2 md:pt-16">
+      <div>
+        <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs, drawn on and milled by hand.</h1>
+        <p class="mt-6 max-w-md text-lg text-dust">Each shell is inked or milled with its own pattern, one egg at a time.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#work" class="rounded-full bg-shell px-6 py-3 text-sm font-medium text-ink hover:bg-white">See the eggs</a>
+          <a href="#contact" class="rounded-full border border-line px-6 py-3 text-sm font-medium hover:border-dust">Get in touch</a>
+        </div>
+      </div>
+
+      <svg viewBox="0 0 400 500" class="mx-auto w-full max-w-xs md:max-w-sm" role="img" aria-label="A goose egg with a milled lattice pattern">
+        <defs>
+          <clipPath id="eggclip"><path d="M200 20C290 20 350 190 350 300C350 410 290 480 200 480C110 480 50 410 50 300C50 190 110 20 200 20Z"/></clipPath>
+        </defs>
+        <path d="M200 20C290 20 350 190 350 300C350 410 290 480 200 480C110 480 50 410 50 300C50 190 110 20 200 20Z" fill="#1a2025" stroke="#ece6da" stroke-width="2" pathLength="1" class="draw" style="--i:0"/>
+        <g clip-path="url(#eggclip)" fill="none" stroke-width="1.4">
+          <g stroke="#ece6da" stroke-opacity=".55">
+            <path class="draw" pathLength="1" style="--i:1" d="M0 110Q200 130 400 110"/>
+            <path class="draw" pathLength="1" style="--i:2" d="M0 170Q200 198 400 170"/>
+            <path class="draw" pathLength="1" style="--i:3" d="M0 230Q200 262 400 230"/>
+            <path class="draw" pathLength="1" style="--i:4" d="M0 290Q200 322 400 290"/>
+            <path class="draw" pathLength="1" style="--i:5" d="M0 350Q200 378 400 350"/>
+            <path class="draw" pathLength="1" style="--i:6" d="M0 410Q200 430 400 410"/>
+          </g>
+          <g stroke="#9bc4b8" stroke-opacity=".8">
+            <path class="draw" pathLength="1" style="--i:7" d="M200 20C80 150 80 350 200 480"/>
+            <path class="draw" pathLength="1" style="--i:8" d="M200 20C140 150 140 350 200 480"/>
+            <path class="draw" pathLength="1" style="--i:9" d="M200 20V480"/>
+            <path class="draw" pathLength="1" style="--i:10" d="M200 20C260 150 260 350 200 480"/>
+            <path class="draw" pathLength="1" style="--i:11" d="M200 20C320 150 320 350 200 480"/>
+          </g>
+        </g>
+      </svg>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="mx-auto max-w-6xl px-6 py-16">
+      <h2 class="font-display text-3xl font-light">The eggs</h2>
+      <p class="mt-3 max-w-md text-dust">Select an egg to see it larger.</p>
+      <div id="gallery" class="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="mx-auto max-w-6xl px-6 py-16">
+      <div class="max-w-xl">
+        <h2 class="font-display text-3xl font-light">About</h2>
+        <!-- Edit this text to tell your own story -->
+        <p class="mt-5 leading-relaxed text-dust">I draw onto goose eggs and mill patterns into the shell. Every egg is worked by hand, so no two are quite alike. If you would like to talk about a piece, I would be glad to hear from you.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mx-auto max-w-6xl px-6 py-16">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="font-display text-3xl font-light">Get in touch</h2>
+          <p class="mt-5 max-w-sm text-dust">Ask about an egg, or send a message. You can also write to me directly.</p>
+          <p class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="mailto:EggDust@mail.co.uk" class="underline decoration-line underline-offset-4 hover:decoration-shell">EggDust@mail.co.uk</a>
+            <button type="button" id="copy" class="rounded-full border border-line px-3 py-1 text-xs text-dust hover:border-dust hover:text-shell">Copy address</button>
+          </p>
+        </div>
+
+        <form id="contact-form" class="space-y-5" novalidate>
+          <div>
+            <label for="name" class="mb-1 block text-sm text-dust">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-shell placeholder-dust/60">
+          </div>
+          <div>
+            <label for="email" class="mb-1 block text-sm text-dust">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-shell placeholder-dust/60">
+          </div>
+          <div>
+            <label for="message" class="mb-1 block text-sm text-dust">Message</label>
+            <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-line bg-panel px-4 py-3 text-shell placeholder-dust/60"></textarea>
+          </div>
+          <button type="submit" class="rounded-full bg-shell px-6 py-3 text-sm font-medium text-ink hover:bg-white">Send email</button>
+          <p id="form-status" class="min-h-[1.5rem] text-sm text-glow" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-6xl border-t border-line px-6 py-8 text-sm text-dust">
+    &copy; <span id="year"></span> EggDust. All eggs and designs are my own work.
+  </footer>
+
+  <!-- Lightbox -->
+  <dialog id="lightbox" class="m-auto w-[min(92vw,34rem)] rounded-2xl border border-line bg-panel p-4 text-shell">
+    <div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-xl bg-ink">
+      <span class="egg-ph" aria-hidden="true"></span>
+      <img id="lb-img" alt="" class="absolute inset-0 h-full w-full object-cover">
+    </div>
+    <h3 id="lb-title" class="mt-4 font-display text-xl"></h3>
+    <p id="lb-note" class="mt-1 text-sm text-dust"></p>
+    <button type="button" id="lb-close" class="mt-4 rounded-full border border-line px-5 py-2 text-sm hover:border-dust">Close</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
