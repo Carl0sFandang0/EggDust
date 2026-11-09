@@ -13,23 +13,51 @@ const EMAIL = 'EggDust@mail.co.uk';
 
 // ---- Gallery ----
 const gallery = document.getElementById('gallery');
-EGGS.forEach((egg, i) => {
-  const card = document.createElement('button');
-  card.type = 'button';
-  card.className = 'group text-left';
-  card.setAttribute('aria-label', 'View ' + egg.title);
-  card.innerHTML =
-    '<div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-panel">' +
-      '<span class="egg-ph" aria-hidden="true"></span>' +
-      '<img src="' + egg.img + '" alt="' + egg.title + '" loading="lazy" ' +
-        'class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
-        'onerror="this.remove()">' +
-    '</div>' +
-    '<h3 class="mt-3 font-display text-lg">' + egg.title + '</h3>' +
-    '<p class="text-sm text-dust">' + egg.note + '</p>';
-  card.addEventListener('click', () => openLightbox(egg));
-  gallery.appendChild(card);
-});
+const searchInput = document.getElementById('search');
+const searchClear = document.getElementById('search-clear');
+const searchStatus = document.getElementById('search-status');
+const noResults = document.getElementById('no-results');
+
+function renderGallery(list) {
+  gallery.innerHTML = '';
+  list.forEach((egg) => {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'group text-left';
+    card.setAttribute('aria-label', 'View ' + egg.title);
+    card.innerHTML =
+      '<div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-panel">' +
+        '<span class="egg-ph" aria-hidden="true"></span>' +
+        '<img src="' + egg.img + '" alt="' + egg.title + '" loading="lazy" ' +
+          'class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+          'onerror="this.remove()">' +
+      '</div>' +
+      '<h3 class="mt-3 font-display text-lg">' + egg.title + '</h3>' +
+      '<p class="text-sm text-dust">' + egg.note + '</p>';
+    card.addEventListener('click', () => openLightbox(egg));
+    gallery.appendChild(card);
+  });
+}
+
+// ---- Search: matches every word against the title and note ----
+function applySearch() {
+  const query = searchInput.value.trim().toLowerCase();
+  const words = query.split(/\s+/).filter(Boolean);
+  const results = EGGS.filter((egg) => {
+    const text = (egg.title + ' ' + egg.note).toLowerCase();
+    return words.every((w) => text.includes(w));
+  });
+  renderGallery(results);
+  searchClear.hidden = !query;
+  noResults.hidden = results.length > 0;
+  searchStatus.textContent = query
+    ? results.length + (results.length === 1 ? ' egg matches' : ' eggs match') + ' "' + searchInput.value.trim() + '"'
+    : '';
+}
+searchInput.addEventListener('input', applySearch);
+searchClear.addEventListener('click', () => { searchInput.value = ''; applySearch(); searchInput.focus(); });
+
+renderGallery(EGGS);
 
 // ---- Lightbox ----
 const lb = document.getElementById('lightbox');

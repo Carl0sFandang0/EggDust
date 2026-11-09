@@ -74,7 +74,18 @@
     <section id="work" class="mx-auto max-w-6xl px-6 py-16">
       <h2 class="font-display text-3xl font-light">The eggs</h2>
       <p class="mt-3 max-w-md text-dust">Select an egg to see it larger.</p>
-      <div id="gallery" class="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+      <div class="mt-8 max-w-md">
+        <label for="search" class="mb-1 block text-sm text-dust">Search the eggs</label>
+        <div class="relative">
+          <input id="search" type="search" autocomplete="off" placeholder="Try milled, ink or spiral" class="w-full rounded-lg border border-line bg-panel py-3 pl-4 pr-12 text-shell placeholder-dust/60">
+          <button type="button" id="search-clear" hidden class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full px-3 py-1 text-xs text-dust hover:text-shell">Clear</button>
+        </div>
+      </div>
+      <p id="search-status" class="mt-3 min-h-[1.25rem] text-sm text-dust" role="status" aria-live="polite"></p>
+
+      <div id="gallery" class="mt-6 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"></div>
+      <p id="no-results" hidden class="mt-6 text-dust">No eggs match that search. Try a different word, or clear the search to see every egg.</p>
     </section>
 
     <!-- About -->
