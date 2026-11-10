@@ -105,3 +105,11 @@ copyBtn.addEventListener('click', async () => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---- Hero egg: start the frame animation once the image strip has loaded ----
+const eggAnim = document.getElementById('egg-anim');
+const eggStrip = new Image();
+const startEgg = () => eggAnim.classList.add('play');
+eggStrip.onload = startEgg;
+eggStrip.onerror = startEgg;
+eggStrip.src = 'images/egg-animation.svg';

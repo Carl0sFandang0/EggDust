@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EggDust | Drawn and milled goose eggs</title>
-  <meta name="description" content="Goose eggs drawn on and milled with patterns by hand. Browse the work and get in touch.">
+  <meta name="description" content="Decorated Goose Eggs. Milled or drawn on. Browse the work and get in touch.">
   <meta name="theme-color" content="#12161a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +14,13 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { ink: '#12161a', panel: '#1a2025', line: '#2a3238', shell: '#ece6da', dust: '#98a4a8', glow: '#9bc4b8' },
+          colors: { ink: '#12161a', panel: '#1a2025', line: '#2a3238', shell: '#ece6da', dust: '#98a4a8', glow: '#9bc4b8', redart: '#8e1b2b' },
           fontFamily: { display: ['Fraunces', 'Georgia', 'serif'], sans: ['"DM Sans"', 'system-ui', 'sans-serif'] }
         }
       }
     };
   </script>
+  <link rel="preload" href="images/egg-animation.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-ink text-shell font-sans antialiased">
@@ -35,39 +36,19 @@
 
   <main id="top">
     <!-- Hero -->
-    <section class="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-20 pt-10 md:grid-cols-2 md:pt-16">
-      <div>
-        <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs, drawn on and milled by hand.</h1>
-        <p class="mt-6 max-w-md text-lg text-dust">Each shell is inked or milled with its own pattern, one egg at a time.</p>
+    <section class="relative mx-auto grid max-w-6xl items-center gap-10 overflow-hidden px-6 pb-10 pt-10 md:grid-cols-2 md:pt-16">
+      <!-- RED Art watermark -->
+      <span aria-hidden="true" class="pointer-events-none relative z-0 order-last -mt-16 select-none whitespace-nowrap text-center font-display text-[clamp(4rem,16vw,13rem)] font-medium leading-none text-redart opacity-40 md:col-span-2 md:-mt-20">RED Art</span>
+      <div class="relative z-10">
+        <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs. Milled and decorated.</h1>
+        <p class="mt-6 max-w-md text-lg text-dust">Each shell is milled or drawn on individualy using a dentists drill and various artists materials. A truly unique gift for a loved one.</p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="#work" class="rounded-full bg-shell px-6 py-3 text-sm font-medium text-ink hover:bg-white">See the eggs</a>
           <a href="#contact" class="rounded-full border border-line px-6 py-3 text-sm font-medium hover:border-dust">Get in touch</a>
         </div>
       </div>
 
-      <svg viewBox="0 0 400 500" class="mx-auto w-full max-w-xs md:max-w-sm" role="img" aria-label="A goose egg with a milled lattice pattern">
-        <defs>
-          <clipPath id="eggclip"><path d="M200 20C290 20 350 190 350 300C350 410 290 480 200 480C110 480 50 410 50 300C50 190 110 20 200 20Z"/></clipPath>
-        </defs>
-        <path d="M200 20C290 20 350 190 350 300C350 410 290 480 200 480C110 480 50 410 50 300C50 190 110 20 200 20Z" fill="#1a2025" stroke="#ece6da" stroke-width="2" pathLength="1" class="draw" style="--i:0"/>
-        <g clip-path="url(#eggclip)" fill="none" stroke-width="1.4">
-          <g stroke="#ece6da" stroke-opacity=".55">
-            <path class="draw" pathLength="1" style="--i:1" d="M0 110Q200 130 400 110"/>
-            <path class="draw" pathLength="1" style="--i:2" d="M0 170Q200 198 400 170"/>
-            <path class="draw" pathLength="1" style="--i:3" d="M0 230Q200 262 400 230"/>
-            <path class="draw" pathLength="1" style="--i:4" d="M0 290Q200 322 400 290"/>
-            <path class="draw" pathLength="1" style="--i:5" d="M0 350Q200 378 400 350"/>
-            <path class="draw" pathLength="1" style="--i:6" d="M0 410Q200 430 400 410"/>
-          </g>
-          <g stroke="#9bc4b8" stroke-opacity=".8">
-            <path class="draw" pathLength="1" style="--i:7" d="M200 20C80 150 80 350 200 480"/>
-            <path class="draw" pathLength="1" style="--i:8" d="M200 20C140 150 140 350 200 480"/>
-            <path class="draw" pathLength="1" style="--i:9" d="M200 20V480"/>
-            <path class="draw" pathLength="1" style="--i:10" d="M200 20C260 150 260 350 200 480"/>
-            <path class="draw" pathLength="1" style="--i:11" d="M200 20C320 150 320 350 200 480"/>
-          </g>
-        </g>
-      </svg>
+      <div id="egg-anim" class="egg-anim relative z-10 mx-auto w-full max-w-xs md:max-w-sm" role="img" aria-label="Beginnings and endings"></div>
     </section>
 
     <!-- Work -->
@@ -93,7 +74,8 @@
       <div class="max-w-xl">
         <h2 class="font-display text-3xl font-light">About</h2>
         <!-- Edit this text to tell your own story -->
-        <p class="mt-5 leading-relaxed text-dust">I draw onto goose eggs and mill patterns into the shell. Every egg is worked by hand, so no two are quite alike. If you would like to talk about a piece, I would be glad to hear from you.</p>
+        <p class="mt-5 leading-relaxed text-dust"><span class="font-medium text-redart brightness-150">RED Art:</span> Real Egg Dust Art.</p>
+        <p class="mt-4 leading-relaxed text-dust">I draw onto goose eggs and mill patterns into the shell. Real Goose Egg sourced from Germany. No two are quite alike. If you would like to talk about a piece, I would be glad to hear from you.</p>
       </div>
     </section>
 
@@ -130,7 +112,7 @@
   </main>
 
   <footer class="mx-auto max-w-6xl border-t border-line px-6 py-8 text-sm text-dust">
-    &copy; <span id="year"></span> EggDust. All eggs and designs are my own work.
+    &copy; <span id="year"></span> EggDust. All eggs are real. All designs are my own work. <span class="text-redart brightness-150">RED Art</span>: Real Egg Dust Art.
   </footer>
 
   <!-- Lightbox -->

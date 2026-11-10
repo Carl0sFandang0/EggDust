@@ -1,13 +1,20 @@
 html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 
-/* The hero egg is drawn line by line on page load */
-.draw {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 1.6s ease-out forwards;
-  animation-delay: calc(var(--i, 0) * 0.18s);
+/* Hero egg: a strip of 40 frames (each 175 x 218) played once, backwards (frame 40 down to frame 1).
+   To change the speed, edit --egg-duration (40 frames; 3.3s is about 12 frames per second). */
+.egg-anim {
+  --egg-duration: 3.3s;
+  aspect-ratio: 175 / 218;
+  background: url("images/egg-animation.svg") 100% 0 / 4000% 100% no-repeat;
+  opacity: 0.1; /* starts faint, fades to full as the frames play */
 }
-@keyframes draw { to { stroke-dashoffset: 0; } }
+.egg-anim.play {
+  animation: egg-play var(--egg-duration) steps(40, jump-none) 1 forwards;
+}
+@keyframes egg-play {
+  from { background-position: 100% 0; opacity: 0.1; }
+  to   { background-position: 0 0;    opacity: 1; }
+}
 
 /* Shown behind a photo until you add the real image */
 .egg-ph {
@@ -25,5 +32,5 @@ dialog::backdrop { background: rgba(8, 10, 12, 0.8); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .draw { animation: none; stroke-dashoffset: 0; }
+  .egg-anim, .egg-anim.play { animation: none; background-position: 0 0; opacity: 1; }
 }
