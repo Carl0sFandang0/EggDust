@@ -9,18 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { ink: '#12161a', panel: '#1a2025', line: '#2a3238', shell: '#ece6da', dust: '#98a4a8', glow: '#9bc4b8', redart: '#8e1b2b' },
-          fontFamily: { display: ['Fraunces', 'Georgia', 'serif'], sans: ['"DM Sans"', 'system-ui', 'sans-serif'] }
-        }
-      }
-    };
-  </script>
   <link rel="preload" href="images/egg-animation.svg" as="image" type="image/svg+xml">
+  <link rel="stylesheet" href="tailwind.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-ink text-shell font-sans antialiased">
@@ -40,8 +30,8 @@
       <!-- RED Art watermark -->
       <span aria-hidden="true" class="pointer-events-none relative z-0 order-last -mt-16 select-none whitespace-nowrap text-center font-display text-[clamp(4rem,16vw,13rem)] font-medium leading-none text-redart opacity-40 md:col-span-2 md:-mt-20">RED Art</span>
       <div class="relative z-10">
-        <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs. Milled and decorated.</h1>
-        <p class="mt-6 max-w-md text-lg text-dust">Each shell is milled or drawn on individualy using a dentists drill and various artists materials. A truly unique gift for a loved one.</p>
+        <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs.<br />Milled & Marked.</h1>
+        <p class="mt-6 max-w-md text-lg text-dust">Each egg is milled or marked individually using a diamond burr and various artists materials. A few are gilded using 24ct gold leaf. A truly unique gift for someone special.</p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="#work" class="rounded-full bg-shell px-6 py-3 text-sm font-medium text-ink hover:bg-white">See the eggs</a>
           <a href="#contact" class="rounded-full border border-line px-6 py-3 text-sm font-medium hover:border-dust">Get in touch</a>
@@ -75,7 +65,7 @@
         <h2 class="font-display text-3xl font-light">About</h2>
         <!-- Edit this text to tell your own story -->
         <p class="mt-5 leading-relaxed text-dust"><span class="font-medium text-redart brightness-150">RED Art:</span> Real Egg Dust Art.</p>
-        <p class="mt-4 leading-relaxed text-dust">I draw onto goose eggs and mill patterns into the shell. Real Goose Egg sourced from Germany. No two are quite alike. If you would like to talk about a piece, I would be glad to hear from you.</p>
+        <p class="mt-4 leading-relaxed text-dust">I draw onto goose eggs and mill patterns into the shell. I use natural goose egg shells sourced from Germany. No two are quite alike. If you would like to talk about a piece, I would be glad to hear from you.</p>
       </div>
     </section>
 
