@@ -1,12 +1,16 @@
 // ---- Your eggs: edit this list ----
 // Put photos in an "images" folder and match the file names below.
 const EGGS = [
-    { title: 'Milled lattice', note: 'Goose egg, milled diamond pattern.', img: 'images/egg-1.jpg' },
-    { title: 'Inked wildflowers', note: 'Goose egg, drawn in ink.', img: 'images/egg-2.jpg' },
-    { title: 'Milled spiral', note: 'Goose egg, milled spiral band.', img: 'images/egg-3.jpg' },
-    { title: 'Inked heron', note: 'Goose egg, drawn in ink.', img: 'images/egg-4.jpg' },
-    { title: 'Milled bands', note: 'Goose egg, milled geometric bands.', img: 'images/egg-5.jpg' },
-    { title: 'Drawn and milled', note: 'Goose egg, ink drawing with milling.', img: 'images/egg-6.jpg' }
+    { title: 'Agony poem', note: 'Duck egg. Poem about Agony. Blood stained in watercolour', img: 'images/agony.jpg' },
+    { title: 'Bumble bee', note: 'Duck egg. An abstract bumble bee drawn in ballpoint and acrylic.', img: 'images/bee.jpg' },
+    { title: 'Abstract pattern', note: 'Duck egg. Abstract pattern in blue watercolour and gold leaf.', img: 'images/blue and gold.jpg' },
+    { title: 'Abstract pattern', note: 'Duck egg. Abstract pattern in green watercolour and gold leaf.', img: 'images/green and gold.jpg' },
+    { title: 'Cats n Dogs', note: 'Duck egg. Drawn in felt tip and acrylic.', img: 'images/cats n dogs.jpg' },
+    { title: 'Simple flower', note: 'Duck egg. Child like flower drawing in fine line felt tip and acrylic.', img: 'images/childlike flower.jpg' },
+    { title: 'Creepy Clown', note: 'Duck egg. Creepy clown in ink and acrylic.', img: 'images/clown.jpg' },
+    { title: 'Sunflower', note: 'Duck egg. Simplistic sunflower in ink and acrylic.', img: 'images/sunflower.jpg' },
+    { title: 'Tulip', note: 'Duck egg. Simplistic tulip in ink and acrylic.', img: 'images/tulip.jpg' },
+    { title: 'Worm', note: 'Duck egg. The worm that turned. Ballpoint and watercolour.', img: 'images/worm.jpg' }
 ];
 
 const EMAIL = 'EggDust@mail.co.uk';
