@@ -1,17 +1,8 @@
-// ---- Your eggs: edit this list ----
-// Put photos in an "images" folder and match the file names below.
-const EGGS = [
-    { title: 'Agony poem', note: 'Duck egg. Poem about Agony. Blood stained in watercolour', img: 'images/agony.jpg' },
-    { title: 'Bumble bee', note: 'Duck egg. An abstract bumble bee drawn in ballpoint and acrylic.', img: 'images/bee.jpg' },
-    { title: 'Abstract pattern', note: 'Duck egg. Abstract pattern in blue watercolour and gold leaf.', img: 'images/blue and gold.jpg' },
-    { title: 'Abstract pattern', note: 'Duck egg. Abstract pattern in green watercolour and gold leaf.', img: 'images/green and gold.jpg' },
-    { title: 'Cats n Dogs', note: 'Duck egg. Drawn in felt tip and acrylic.', img: 'images/cats n dogs.jpg' },
-    { title: 'Simple flower', note: 'Duck egg. Child like flower drawing in fine line felt tip and acrylic.', img: 'images/childlike flower.jpg' },
-    { title: 'Creepy Clown', note: 'Duck egg. Creepy clown in ink and acrylic.', img: 'images/clown.jpg' },
-    { title: 'Sunflower', note: 'Duck egg. Simplistic sunflower in ink and acrylic.', img: 'images/sunflower.jpg' },
-    { title: 'Tulip', note: 'Duck egg. Simplistic tulip in ink and acrylic.', img: 'images/tulip.jpg' },
-    { title: 'Worm', note: 'Duck egg. The worm that turned. Ballpoint and watercolour.', img: 'images/worm.jpg' }
-];
+// The egg list is in eggs.js (edit that file to add or change eggs).
+if (typeof EGGS === 'undefined') {
+    console.error('EggDust: eggs.js did not load. Check it is uploaded next to index.html and loaded before script.js.');
+}
+
 
 const EMAIL = 'EggDust@mail.co.uk';
 
@@ -43,12 +34,12 @@ function renderGallery(list) {
     });
 }
 
-// ---- Search: matches every word against the title and note ----
+// ---- Search: matches every word against the title, note and details ----
 function applySearch() {
     const query = searchInput.value.trim().toLowerCase();
     const words = query.split(/\s+/).filter(Boolean);
     const results = EGGS.filter((egg) => {
-        const text = (egg.title + ' ' + egg.note).toLowerCase();
+        const text = (egg.title + ' ' + egg.note + ' ' + (egg.details || '')).toLowerCase();
         return words.every((w) => text.includes(w));
     });
     renderGallery(results);

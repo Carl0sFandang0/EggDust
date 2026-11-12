@@ -113,9 +113,15 @@
     </div>
     <h3 id="lb-title" class="mt-4 font-display text-xl"></h3>
     <p id="lb-note" class="mt-1 text-sm text-dust"></p>
-    <button type="button" id="lb-close" class="mt-4 rounded-full border border-line px-5 py-2 text-sm hover:border-dust">Close</button>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <button type="button" id="lb-details-btn" hidden aria-expanded="false" aria-controls="lb-details" class="rounded-full border border-line px-5 py-2 text-sm hover:border-dust">Details</button>
+      <button type="button" id="lb-close" class="rounded-full border border-line px-5 py-2 text-sm hover:border-dust">Close</button>
+    </div>
+    <div id="lb-details" hidden class="mt-4 space-y-3 border-t border-line pt-4 text-sm leading-relaxed text-dust"></div>
   </dialog>
 
+  <script src="eggs.js"></script>
   <script src="script.js"></script>
+  <script src="details.js"></script>
 </body>
 </html>
