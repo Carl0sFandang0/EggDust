@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
   <link rel="preload" href="images/egg-strip.jpg" as="image">
-  <link rel="stylesheet" href="tailwind.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tailwind.css?v=1">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body class="bg-ink text-shell font-sans antialiased">
 
@@ -36,16 +36,21 @@
         </div>
       </div>
 
-      <!-- Slowly scrolling strip of eggs (the strip is placed twice so the loop has no join) -->
-      <div class="egg-band relative z-10 mt-12" role="img" aria-label="Beginnings and endings">
-        <div class="egg-track">
-          <img src="images/egg-strip.jpg" alt="" decoding="async" fetchpriority="high">
-          <img src="images/egg-strip.jpg" alt="" aria-hidden="true" decoding="async">
+      <!-- Strip of eggs: drifts slowly by itself, and can be dragged or swiped sideways.
+           The picture is placed three times so it can loop in both directions without a join.
+           The solid red "RED Art" lettering sits on top of the eggs; it ignores clicks and
+           touches, so dragging the strip still works right through it. -->
+      <div class="egg-stage">
+        <div class="egg-band" role="region" aria-label="Beginnings and endings" tabindex="0">
+          <div class="egg-track">
+            <img src="images/egg-strip.jpg" alt="" draggable="false" decoding="async" fetchpriority="high">
+            <img src="images/egg-strip.jpg" alt="" draggable="false" aria-hidden="true" decoding="async">
+            <img src="images/egg-strip.jpg" alt="" draggable="false" aria-hidden="true" decoding="async">
+          </div>
         </div>
+        <!-- RED Art watermark -->
+        <span aria-hidden="true" class="redart-mark pointer-events-none select-none whitespace-nowrap text-center font-display font-medium leading-none text-redart">RED Art</span>
       </div>
-
-      <!-- RED Art watermark -->
-      <span aria-hidden="true" class="pointer-events-none relative z-0 block -mt-16 select-none whitespace-nowrap text-center font-display text-[clamp(4rem,16vw,13rem)] font-medium leading-none text-redart opacity-40 md:-mt-20">RED Art</span>
     </section>
 
     <!-- Work -->
@@ -127,8 +132,8 @@
     <div id="lb-details" hidden class="mt-4 space-y-3 border-t border-line pt-4 text-sm leading-relaxed text-dust"></div>
   </dialog>
 
-  <script src="eggs.js"></script>
-  <script src="script.js"></script>
-  <script src="details.js"></script>
+  <script src="eggs.js?v=1"></script>
+  <script src="script.js?v=2"></script>
+  <script src="details.js?v=1"></script>
 </body>
 </html>

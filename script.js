@@ -104,3 +104,122 @@ copyBtn.addEventListener('click', async () => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---- Hero egg strip: drifts slowly, and can be dragged or swiped sideways ----
+(function () {
+    const band = document.querySelector('.egg-band');
+    if (!band) return;
+    const firstImg = band.querySelector('.egg-track img');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Time for one full pass of the picture, read from --strip-duration in style.css
+    const raw = getComputedStyle(band).getPropertyValue('--strip-duration').trim();
+    const duration = (parseFloat(raw) || 120) * (raw.endsWith('ms') ? 0.001 : 1);
+
+    let w = 0;            // width of one copy of the picture
+    let pos = 0;          // our own (fractional) scroll position
+    let last = 0;
+    let resumeTimer = null;
+    let userHolding = false;   // a mouse button or finger is down
+    let paused = false;        // paused while the visitor is interacting
+    let visible = true;
+
+    function pauseForUser() {
+        paused = true;
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => { if (!userHolding) paused = false; }, 2500);
+    }
+
+    // The picture is shown three times. Keep the position inside the middle copy;
+    // jumping by exactly one copy's width is invisible, and gives an endless loop both ways.
+    function wrap() {
+        if (!w) return;
+        let jumped = false;
+        if (pos >= 2 * w) { pos -= w; jumped = true; }
+        else if (pos < w) { pos += w; jumped = true; }
+        // Only touch scrollLeft when we really jump, so a swipe's momentum is never interrupted
+        if (jumped) band.scrollLeft = pos;
+    }
+
+    function measure() {
+        const newW = firstImg.getBoundingClientRect().width;
+        if (!newW) return;
+        const frac = w ? (band.scrollLeft - w) / w : 0;   // keep the same place in the picture on resize
+        w = newW;
+        pos = w + frac * w;
+        wrap();
+    }
+
+    // Scrolling by finger, trackpad or keyboard is picked up here
+    band.addEventListener('scroll', () => {
+        if (Math.abs(band.scrollLeft - pos) > 1.5) {   // not our own movement
+            pos = band.scrollLeft;
+            pauseForUser();
+            wrap();
+        }
+    }, { passive: true });
+
+    // Dragging with a mouse (touch already scrolls natively)
+    let dragStartX = 0, dragStartPos = 0;
+    band.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        userHolding = true;
+        paused = true;
+        dragStartX = e.clientX;
+        dragStartPos = band.scrollLeft;
+        band.classList.add('dragging');
+        band.setPointerCapture(e.pointerId);
+    });
+    band.addEventListener('pointermove', (e) => {
+        if (!band.classList.contains('dragging')) return;
+        pos = dragStartPos - (e.clientX - dragStartX);
+        band.scrollLeft = pos;
+        wrap();
+        if (pos !== band.scrollLeft && Math.abs(band.scrollLeft - pos) > 1.5) pos = band.scrollLeft;
+        // after a wrap, carry on dragging from the new place
+        dragStartX = e.clientX;
+        dragStartPos = pos;
+    });
+    function endDrag() {
+        if (!band.classList.contains('dragging')) return;
+        band.classList.remove('dragging');
+        userHolding = false;
+        pauseForUser();
+    }
+    band.addEventListener('pointerup', endDrag);
+    band.addEventListener('pointercancel', endDrag);
+
+    // A finger on the strip pauses the drift until it lifts
+    band.addEventListener('touchstart', () => { userHolding = true; paused = true; clearTimeout(resumeTimer); }, { passive: true });
+    band.addEventListener('touchend', () => { userHolding = false; pauseForUser(); }, { passive: true });
+    band.addEventListener('touchcancel', () => { userHolding = false; pauseForUser(); }, { passive: true });
+    band.addEventListener('keydown', pauseForUser);
+    band.addEventListener('dragstart', (e) => e.preventDefault());
+
+    // Do not animate while the strip is off screen
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => { visible = entries[0].isIntersecting; }).observe(band);
+    }
+
+    function tick(now) {
+        const dt = Math.min(0.1, (now - (last || now)) / 1000);
+        last = now;
+        if (w && visible && !paused && !reduceMotion) {
+            pos += (w / duration) * dt;
+            wrap();
+            band.scrollLeft = pos;
+        }
+        requestAnimationFrame(tick);
+    }
+
+    function start() {
+        measure();
+        requestAnimationFrame(tick);
+    }
+    if (firstImg.complete && firstImg.naturalWidth) start();
+    else {
+        firstImg.addEventListener('load', start, { once: true });
+        firstImg.addEventListener('error', () => console.warn('EggDust: could not load images/egg-strip.jpg. Check it is in the images folder with this exact name.'), { once: true });
+    }
+    window.addEventListener('resize', measure);
+})();
