@@ -4,13 +4,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
    and can also be dragged (mouse) or swiped (finger) sideways. The drifting is done in script.js.
    --strip-duration: time for one full pass of the picture (bigger = slower).
    --strip-height:   height of the band (the picture keeps its proportions); it is set on
-                     .egg-stage below, and the RED Art lettering is sized from it too. */
+                     .egg-stage below. */
 .egg-stage {
   --redart-opacity: 0.6;
   --strip-height: clamp(85px, 15vw, 156px);
-  position: relative;
-  z-index: 10;
   margin-top: 3rem;
+  /* No z-index here on purpose: a z-index would stop the strip's black blending into the page colour */
 }
 .egg-band {
   --strip-duration: 120s;
@@ -43,21 +42,17 @@ html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
   user-select: none;
 }
 
-/* "RED Art" lettering: deep red, see-through so the eggs show through it, centred directly over the scrolling eggs.
-   --redart-opacity: 1 is solid, 0 is invisible (0.6 is a good balance).
+/* "RED Art" lettering: deep red and see-through, in its own row directly underneath the scrolling eggs.
+   --redart-opacity (set on .egg-stage above): 1 is solid, 0 is invisible.
    Change the colour here (and "redart" in tailwind.config.js) to restyle it. */
 .redart-mark {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(var(--strip-height) * 0.8);
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: clamp(4rem, 16vw, 13rem);
   line-height: 1;
   color: #8e1b2b;
   opacity: var(--redart-opacity, 0.6);
-  mix-blend-mode: normal;
   pointer-events: none;
 }
 
