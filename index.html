@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
-  <link rel="preload" href="images/egg-animation.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="images/egg-strip.jpg" as="image">
   <link rel="stylesheet" href="tailwind.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,19 +26,26 @@
 
   <main id="top">
     <!-- Hero -->
-    <section class="relative mx-auto grid max-w-6xl items-center gap-10 overflow-hidden px-6 pb-10 pt-10 md:grid-cols-2 md:pt-16">
-      <!-- RED Art watermark -->
-      <span aria-hidden="true" class="pointer-events-none relative z-0 order-last -mt-16 select-none whitespace-nowrap text-center font-display text-[clamp(4rem,16vw,13rem)] font-medium leading-none text-redart opacity-40 md:col-span-2 md:-mt-20">RED Art</span>
-      <div class="relative z-10">
+    <section class="relative overflow-hidden pb-10 pt-10 md:pt-16">
+      <div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
         <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs.<br />Milled & Marked.</h1>
-        <p class="mt-6 max-w-md text-lg text-dust">Each egg is milled or marked individually using a diamond burr and various artists materials. A few are gilded using 24ct gold leaf. A truly unique gift for someone special.</p>
-        <div class="mt-8 flex flex-wrap gap-4">
+        <p class="mx-auto mt-6 max-w-md text-lg text-dust">Each egg is milled or marked individually using a diamond burr and various artists materials. A few are gilded using 24ct gold leaf. A truly unique gift for someone special.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a href="#work" class="rounded-full bg-shell px-6 py-3 text-sm font-medium text-ink hover:bg-white">See the eggs</a>
           <a href="#contact" class="rounded-full border border-line px-6 py-3 text-sm font-medium hover:border-dust">Get in touch</a>
         </div>
       </div>
 
-      <div id="egg-anim" class="egg-anim relative z-10 mx-auto w-full max-w-xs md:max-w-sm" role="img" aria-label="Beginnings and endings"></div>
+      <!-- Slowly scrolling strip of eggs (the strip is placed twice so the loop has no join) -->
+      <div class="egg-band relative z-10 mt-12" role="img" aria-label="Beginnings and endings">
+        <div class="egg-track">
+          <img src="images/egg-strip.jpg" alt="" decoding="async" fetchpriority="high">
+          <img src="images/egg-strip.jpg" alt="" aria-hidden="true" decoding="async">
+        </div>
+      </div>
+
+      <!-- RED Art watermark -->
+      <span aria-hidden="true" class="pointer-events-none relative z-0 block -mt-16 select-none whitespace-nowrap text-center font-display text-[clamp(4rem,16vw,13rem)] font-medium leading-none text-redart opacity-40 md:-mt-20">RED Art</span>
     </section>
 
     <!-- Work -->

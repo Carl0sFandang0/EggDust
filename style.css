@@ -1,19 +1,36 @@
 html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 
-/* Hero egg: a strip of 40 frames (each 175 x 218) played once, backwards (frame 40 down to frame 1).
-   To change the speed, edit --egg-duration (40 frames; 3.3s is about 12 frames per second). */
-.egg-anim {
-  --egg-duration: 3.3s;
-  aspect-ratio: 175 / 218;
-  background: url("images/egg-animation.svg") 100% 0 / 4000% 100% no-repeat;
-  opacity: 0.1; /* starts faint, fades to full as the frames play */
+/* Hero egg strip: one long picture of eggs scrolling slowly and endlessly.
+   --strip-duration: time for one full pass (bigger = slower).
+   --strip-height:   height of the band (the picture keeps its proportions). */
+.egg-band {
+  --strip-duration: 240s;
+  --strip-height: clamp(170px, 30vw, 312px);
+  height: var(--strip-height);
+  overflow: hidden;
+  /* Black in the picture becomes see-through, so the page colour shows */
+  mix-blend-mode: screen;
+  /* Soft fade at the left and right edges */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
-.egg-anim.play {
-  animation: egg-play var(--egg-duration) steps(40, jump-none) 1 forwards;
+.egg-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: egg-scroll var(--strip-duration) linear infinite;
+  will-change: transform;
 }
-@keyframes egg-play {
-  from { background-position: 100% 0; opacity: 0.1; }
-  to   { background-position: 0 0;    opacity: 1; }
+.egg-track img {
+  display: block;
+  flex: none;
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+@keyframes egg-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
 }
 
 /* Shown behind a photo until you add the real image */
@@ -32,5 +49,5 @@ dialog::backdrop { background: rgba(8, 10, 12, 0.8); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .egg-anim, .egg-anim.play { animation: none; background-position: 0 0; opacity: 1; }
+  .egg-track { animation: none; }
 }
