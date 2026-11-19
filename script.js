@@ -34,12 +34,13 @@ function renderGallery(list) {
     });
 }
 
-// ---- Search: matches every word against the title, note and details ----
+// ---- Search: matches every word against the title, note, details and hidden keywords ----
 function applySearch() {
     const query = searchInput.value.trim().toLowerCase();
     const words = query.split(/\s+/).filter(Boolean);
     const results = EGGS.filter((egg) => {
-        const text = (egg.title + ' ' + egg.note + ' ' + (egg.details || '')).toLowerCase();
+        const keywords = Array.isArray(egg.keywords) ? egg.keywords.join(' ') : (egg.keywords || '');
+        const text = (egg.title + ' ' + egg.note + ' ' + (egg.details || '') + ' ' + keywords).toLowerCase();
         return words.every((w) => text.includes(w));
     });
     renderGallery(results);
