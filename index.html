@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
-  <link rel="preload" href="images/egg-strip.jpg" as="image">
+  <link rel="preload" href="images/egg-animation.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="tailwind.css?v=1">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body class="bg-ink text-shell font-sans antialiased">
 
@@ -26,30 +26,21 @@
 
   <main id="top">
     <!-- Hero -->
-    <section class="relative overflow-hidden pb-10 pt-10 md:pt-16">
-      <div class="relative z-10 mx-auto max-w-3xl px-6 text-center">
+    <section class="relative mx-auto grid max-w-6xl items-center gap-10 overflow-hidden px-6 pb-10 pt-10 md:grid-cols-2 md:pt-16">
+      <div class="relative z-10">
         <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs.<br />Milled & Marked.</h1>
-        <p class="mx-auto mt-6 max-w-md text-lg text-dust">Each egg is milled or marked individually using a diamond burr and various artists materials. A few are gilded using 24ct gold leaf. A truly unique gift for someone special.</p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <p class="mt-6 max-w-md text-lg text-dust">Each egg is milled or marked individually using a diamond burr and various artists materials. A few are gilded using 24ct gold leaf. A truly unique gift for someone special.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
           <a href="#work" class="rounded-full bg-shell px-6 py-3 text-sm font-medium text-ink hover:bg-white">See the eggs</a>
           <a href="#contact" class="rounded-full border border-line px-6 py-3 text-sm font-medium hover:border-dust">Get in touch</a>
         </div>
       </div>
 
-      <!-- Strip of eggs: drifts slowly by itself, and can be dragged or swiped sideways.
-           The picture is placed three times so it can loop in both directions without a join.
-           The see-through "RED Art" lettering sits in its own row underneath the eggs. -->
-      <div class="egg-stage">
-        <div class="egg-band" role="region" aria-label="Beginnings and endings" tabindex="0">
-          <div class="egg-track">
-            <img src="images/egg-strip.jpg" alt="" draggable="false" decoding="async" fetchpriority="high">
-            <img src="images/egg-strip.jpg" alt="" draggable="false" aria-hidden="true" decoding="async">
-            <img src="images/egg-strip.jpg" alt="" draggable="false" aria-hidden="true" decoding="async">
-          </div>
-        </div>
-        <!-- RED Art watermark -->
-        <span aria-hidden="true" class="redart-mark pointer-events-none select-none whitespace-nowrap text-center font-display font-medium leading-none text-redart">RED Art</span>
-      </div>
+      <!-- Egg with an eye: a strip of 40 frames, played once (see .egg-anim in style.css and the end of script.js) -->
+      <div id="egg-anim" class="egg-anim" role="img" aria-label="Beginnings and endings"></div>
+
+      <!-- RED Art watermark: see-through, in its own row underneath -->
+      <span aria-hidden="true" class="redart-mark pointer-events-none select-none whitespace-nowrap font-display font-medium leading-none">RED Art</span>
     </section>
 
     <!-- Work -->
@@ -135,7 +126,7 @@
   </dialog>
 
   <script src="eggs.js?v=2"></script>
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=6"></script>
   <script src="details.js?v=1"></script>
 </body>
 </html>

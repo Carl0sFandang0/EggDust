@@ -15,7 +15,7 @@
 //             Leave this out and no Details button appears for that egg.
 //             For a second paragraph, put \n\n between them.
 //   keywords - OPTIONAL. Extra search words that visitors never see. Use them for
-//             words people might type that are not in the title, note or details:
+//             words people might type that are not in the title or note:
 //             synonyms (insect, bug), US spellings (watercolor), themes (spooky),
 //             subjects (garden), colours, styles. Separate the words with spaces.
 //             The search looks in the title, note, details and keywords together.
@@ -29,14 +29,54 @@
 
 const EGGS = [
     {
-        title: 'Agony', note: 'Poem called "Agony" by Katy Towell.', img: 'images/agony poem ink and acrylic.jpg', details: 'Spiral text in ink with watercolour blood stains on a duck egg. The poem, by Katy Towell, is about pain and death. The words are below.\n\nI AM HERE.\n\nI AM EVERYWHERE.\n\nEVERY PLACE YOU\'VE BEEN, I HAVE WAITED.\n\nEVERY FACE YOU\'VE SEEN, I HAVE WORN.\n\nI HAVE NOT ONE NAME BUT THOUSANDS.\n\nI COME ON THE WINGS OF AN EPIDEMIC, ON THE SOUNDS OF A MASSACRE.\n\nA LONE SCREAM IN THE NIGHT.\n\nANNOUNCED BY THE DISTANT THUNDER OF A WAR OR THE DISTANT BLEAT OF A SLAUGHTERED CALF.\n\nI VISIT THE DYING IN THEIR BURNING SKIN; I DEVOUR THE BODIES OF THE SICK.\n\nI CRUSH THE HEARTS OF THE HOPEFUL AS I DANCE ON THE BACKS OF THE WEAK.\n\nYOUR GREATEST FEARS ARE MY DELIGHT.\n\nWITH YOUR CRIES YOU INVITE ME IN.\n\nI AM THE BETRAYAL YOU COULD NOT HAVE SEEN.\n\nI AM THE KILLER YOU THOUGHT YOU KNEW.\n\nONE DAY I WILL BE YOUR MOTHER OR YOUR FATHER OR YOUR FRIEND.\n\nANOTHER DAY I WILL BE YOUR NEIGHBOUR, OR PERHAPS I\'LL WORK THROUGH YOU.\n\nTHERE ARE MONSTERS HIDING IN YOUR CLOSET.\n\nTHERE ARE GHOSTS BENEATH YOUR BED.\n\nTHE DREAM YOU FEARED WAS REAL - IT WAS REAL.\n\nTHESE ARE GIFTS TO YOU FROM ME.\n\nI LOVE YOU IN MY OWN WAY.\n\nWITH YOUR SUFFERING I AM ALIVE!\n\nCAN\'T YOU HEAR THE MUSIC ON THE WIND?\n\nDON\'T YOU RECOGNISE THE TUNE?\n\nIS IT YOU, MY FRIEND, YOUR STRUGGLING? YOUR SPIRIT TORN LIMB FROM LIMB?\n\nBUT I AM NOT DEATH: DEATH IS YOUR DELIVERER;\n\nDEATH LOOKS TO ME WITH SORROW IN HIS EYES AND ASKS: "WHY MUST YOU DO THIS?"\n\nMY ANSWER REMAINS UNCHANGED: I DO WHAT YOU CANNOT.\n\nNO END IS SWIFT UNDER MY WATCH.\n\nMERCY IS A MISTAKE THAT I CORRECT.\n\nI AM PEACE DESTROYED AND EYES FORCED OPEN.\n\nI AM THE RAGGED RING AROUND YOUR NECK.\n\nI AM YOUR SECRET WISH FOR OTHERS.\n\nI AM THEIR SECRET WISH FOR YOU.\n\nI HAVE NOT ONE NAME BUT THOUSANDS.\n\nBUT YOU... YOU MAY CALL ME AGONY.\n\nAND I AM PLEASED TO MAKE YOUR ACQUAINTANCE...', keywords: 'duck spiral text poem bood ink watercolour watercolor Katy Towell pain death agony'},
-    { title: 'Alice', note: 'Alice through the looking glass', img: 'images/Alice party ink .jpg',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Alice', note: 'Alice through the looking glass', img: 'images/Alice party2 ink .jpg',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Alice', note: 'Alice through the looking glass', img: 'images/Alice party3 ink.jpg',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Alice', note: 'Alice through the looking glass', img: 'images/Alice party4 ink.jpg',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Bee', note: 'Note...', img: 'images/bee ink and acrylic.jpg',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Ben something', note: 'Note...', img: 'images/ben something pencil.jpg',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Face', note: 'Note...', img: 'images/black drilled out scared face.jpg',details: 'Details...', keywords: 'Keywords...' },
+        title: 'Agony',
+        note: 'Poem called "Agony" by Katy Towell.',
+        img: 'images/agony poem ink and acrylic.jpg',
+        details: 'Spiral text in ink with watercolour blood stains on a duck egg. The poem, by Katy Towell, is about pain and death. The words are below.\n\nI AM HERE.\n\nI AM EVERYWHERE.\n\nEVERY PLACE YOU\'VE BEEN, I HAVE WAITED.\n\nEVERY FACE YOU\'VE SEEN, I HAVE WORN.\n\nI HAVE NOT ONE NAME BUT THOUSANDS.\n\nI COME ON THE WINGS OF AN EPIDEMIC, ON THE SOUNDS OF A MASSACRE.\n\nA LONE SCREAM IN THE NIGHT.\n\nANNOUNCED BY THE DISTANT THUNDER OF A WAR OR THE DISTANT BLEAT OF A SLAUGHTERED CALF.\n\nI VISIT THE DYING IN THEIR BURNING SKIN; I DEVOUR THE BODIES OF THE SICK.\n\nI CRUSH THE HEARTS OF THE HOPEFUL AS I DANCE ON THE BACKS OF THE WEAK.\n\nYOUR GREATEST FEARS ARE MY DELIGHT.\n\nWITH YOUR CRIES YOU INVITE ME IN.\n\nI AM THE BETRAYAL YOU COULD NOT HAVE SEEN.\n\nI AM THE KILLER YOU THOUGHT YOU KNEW.\n\nONE DAY I WILL BE YOUR MOTHER OR YOUR FATHER OR YOUR FRIEND.\n\nANOTHER DAY I WILL BE YOUR NEIGHBOUR, OR PERHAPS I\'LL WORK THROUGH YOU.\n\nTHERE ARE MONSTERS HIDING IN YOUR CLOSET.\n\nTHERE ARE GHOSTS BENEATH YOUR BED.\n\nTHE DREAM YOU FEARED WAS REAL - IT WAS REAL.\n\nTHESE ARE GIFTS TO YOU FROM ME.\n\nI LOVE YOU IN MY OWN WAY.\n\nWITH YOUR SUFFERING I AM ALIVE!\n\nCAN\'T YOU HEAR THE MUSIC ON THE WIND?\n\nDON\'T YOU RECOGNISE THE TUNE?\n\nIS IT YOU, MY FRIEND, YOUR STRUGGLING? YOUR SPIRIT TORN LIMB FROM LIMB?\n\nBUT I AM NOT DEATH: DEATH IS YOUR DELIVERER;\n\nDEATH LOOKS TO ME WITH SORROW IN HIS EYES AND ASKS: "WHY MUST YOU DO THIS?"\n\nMY ANSWER REMAINS UNCHANGED: I DO WHAT YOU CANNOT.\n\nNO END IS SWIFT UNDER MY WATCH.\n\nMERCY IS A MISTAKE THAT I CORRECT.\n\nI AM PEACE DESTROYED AND EYES FORCED OPEN.\n\nI AM THE RAGGED RING AROUND YOUR NECK.\n\nI AM YOUR SECRET WISH FOR OTHERS.\n\nI AM THEIR SECRET WISH FOR YOU.\n\nI HAVE NOT ONE NAME BUT THOUSANDS.\n\nBUT YOU... YOU MAY CALL ME AGONY.\n\nAND I AM PLEASED TO MAKE YOUR ACQUAINTANCE...',
+        keywords: 'duck spiral text poem bood ink watercolour watercolor Katy Towell pain death agony'
+    },
+    {
+        title: 'Alice',
+        note: 'Alice\'s mad tea party',
+        img: 'images/Alice party ink .jpg',
+        details: 'Drawn in ballpoint pen on a duck egg. It shows the March Hare, the Dormouse and the Mad Hatter from Alice\'s Mad Tea Party',
+        keywords: 'duck alice looking glass mad hatter dormouse tea party march hare fantasy lewis carroll'
+    },
+    {
+        title: 'Alice',
+        note: 'Alice\'s mad tea party',
+        img: 'images/Alice party2 ink .jpg',
+        details: 'Drawn in ballpoint pen on a duck egg. It shows the Mad Hatter from Alice\'s Mad Tea Party',
+        keywords: 'duck alice looking glass mad hatter tea party fantasy lewis carroll'
+    },
+    {
+        title: 'Alice',
+        note: 'Alice through the looking glass',
+        img: 'images/Alice party4 ink.jpg',
+        details: 'Drawn in ballpoint pen on a duck egg. It shows Alice from Alice\'s Mad Tea Party',
+        keywords: 'duck alice looking glass tea party fantasy lewis carroll'
+    },
+    {
+        title: 'Bee',
+        note: 'Bumble bee',
+        img: 'images/bee ink and acrylic.jpg',
+        details: 'Zentangle bee drawn on a duck egg in gel pen and coloured in acrylic',
+        keywords: 'zentangle bee acrylic gel pen duck'
+    },
+    {
+        title: 'Beinn Alligin',
+        note: 'Jeweled Mountain on the Torridon Ridge',
+        img: 'images/ben something pencil.jpg',
+        details: 'Pencil sketch of Beinn Alligin, Scotland. Drawn on duck egg.',
+        keywords: 'Beinn Alligin duck pencil scenery mountain'
+    },
+    {
+        title: 'Face',
+        note: 'The face of fear.',
+        img: 'images/black drilled out scared face.jpg',
+        details: 'A duck egg has been sprayed black and the image has been scratched out of the black using a diamond tipped dentist drill. the image shows the terror in the eyes of a man who has seen too much.',
+        keywords: 'terror face duck scratch fear eyes diamond dentist drill sprayed black'
+    },
     { title: 'Pattern', note: 'Note...', img: 'images/blue and gold blown pattern.jpg',details: 'Details...', keywords: 'Keywords...' },
     { title: 'Cat & Dog', note: 'Note...', img: 'images/cat and dog ink and watercolour.jpg',details: 'Details...', keywords: 'Keywords...' },
     { title: 'Celtic Band', note: 'Note...', img: 'images/celtic band ink1.jpg',details: 'Details...', keywords: 'Keywords...' },

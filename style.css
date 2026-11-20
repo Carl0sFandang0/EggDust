@@ -1,58 +1,40 @@
 html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 
-/* Hero egg strip: one long picture of eggs that drifts slowly and endlessly,
-   and can also be dragged (mouse) or swiped (finger) sideways. The drifting is done in script.js.
-   --strip-duration: time for one full pass of the picture (bigger = slower).
-   --strip-height:   height of the band (the picture keeps its proportions); it is set on
-                     .egg-stage below. */
-.egg-stage {
-  --redart-opacity: 0.6;
-  --strip-height: clamp(85px, 15vw, 156px);
-  margin-top: 3rem;
-  /* No z-index here on purpose: a z-index would stop the strip's black blending into the page colour */
+/* Hero egg with an eye: a strip of 40 frames (each 175 x 218) played once, backwards (frame 40 down to frame 1),
+   fading in from 10% to full strength as it plays. The animation starts from script.js once the strip has loaded.
+   --egg-duration: time for the whole animation (40 frames; 3.3s is about 12 frames per second). */
+.egg-anim {
+  --egg-duration: 3.3s;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 20rem;
+  margin: 0 auto;
+  aspect-ratio: 175 / 218;
+  background: url("images/egg-animation.svg") 100% 0 / 4000% 100% no-repeat;
+  opacity: 0.1;
 }
-.egg-band {
-  --strip-duration: 120s;
-  height: var(--strip-height);
-  overflow-x: auto;
-  overflow-y: hidden;
-  overscroll-behavior-x: contain;
-  scrollbar-width: none;
-  cursor: grab;
-  /* Black in the picture becomes see-through, so the page colour shows */
-  mix-blend-mode: screen;
-  /* Soft fade at the left and right edges */
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+@media (min-width: 768px) { .egg-anim { max-width: 24rem; } }
+.egg-anim.play {
+  animation: egg-play var(--egg-duration) steps(40, jump-none) 1 forwards;
 }
-.egg-band::-webkit-scrollbar { display: none; }
-.egg-band.dragging { cursor: grabbing; user-select: none; -webkit-user-select: none; }
-.egg-track {
-  display: flex;
-  width: max-content;
-  height: 100%;
-}
-.egg-track img {
-  display: block;
-  flex: none;
-  height: 100%;
-  width: auto;
-  max-width: none;
-  -webkit-user-drag: none;
-  user-select: none;
+@keyframes egg-play {
+  from { background-position: 100% 0; opacity: 0.1; }
+  to   { background-position: 0 0;    opacity: 1; }
 }
 
-/* "RED Art" lettering: deep red and see-through, in its own row directly underneath the scrolling eggs.
-   --redart-opacity (set on .egg-stage above): 1 is solid, 0 is invisible.
+/* "RED Art" lettering: deep red and see-through, in its own row underneath the egg and the text.
+   --redart-opacity: 1 is solid, 0 is invisible (0.6 is a good balance).
    Change the colour here (and "redart" in tailwind.config.js) to restyle it. */
 .redart-mark {
+  --redart-opacity: 0.6;
+  grid-column: 1 / -1;
   display: block;
-  margin-top: 1rem;
   text-align: center;
   font-size: clamp(4rem, 16vw, 13rem);
   line-height: 1;
   color: #8e1b2b;
-  opacity: var(--redart-opacity, 0.6);
+  opacity: var(--redart-opacity);
   pointer-events: none;
 }
 
@@ -72,4 +54,6 @@ dialog::backdrop { background: rgba(8, 10, 12, 0.8); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  /* Visitors who ask for less motion see the first frame, with no animation */
+  .egg-anim, .egg-anim.play { animation: none; background-position: 0 0; opacity: 1; }
 }
