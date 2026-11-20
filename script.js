@@ -7,38 +7,78 @@ if (typeof EGGS === 'undefined') {
 const EMAIL = 'EggDust@mail.co.uk';
 
 // ---- Gallery ----
+// How many eggs show at once. "Load more eggs" adds this many each time it is pressed.
+const EGGS_PER_PAGE = 10;
+
 const gallery = document.getElementById('gallery');
 const searchInput = document.getElementById('search');
 const searchClear = document.getElementById('search-clear');
 const searchStatus = document.getElementById('search-status');
 const noResults = document.getElementById('no-results');
+const loadMoreWrap = document.getElementById('load-more-wrap');
+const loadMoreBtn = document.getElementById('load-more');
 
-function renderGallery(list) {
-    gallery.innerHTML = '';
-    list.forEach((egg) => {
-        const card = document.createElement('button');
-        card.type = 'button';
-        card.className = 'group text-left';
-        card.setAttribute('aria-label', 'View ' + egg.title);
-        card.innerHTML =
-            '<div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-panel">' +
-            '<span class="egg-ph" aria-hidden="true"></span>' +
-            '<img src="' + egg.img + '" alt="' + egg.title + '" loading="lazy" ' +
-            'class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
-            'onerror="this.remove()">' +
-            '</div>' +
-            '<h3 class="mt-3 font-display text-base sm:text-lg">' + egg.title + '</h3>' +
-            '<p class="text-xs text-dust sm:text-sm">' + egg.note + '</p>';
-        card.addEventListener('click', () => openLightbox(egg));
-        gallery.appendChild(card);
-    });
+// A fresh random order every time the page loads (searches keep this same order)
+const shuffledEggs = EGGS.slice();
+for (let i = shuffledEggs.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledEggs[i], shuffledEggs[j]] = [shuffledEggs[j], shuffledEggs[i]];
 }
+
+let currentList = [];   // the eggs that match the current search (or all eggs)
+let shownCount = 0;     // how many of them are on screen so far
+
+function createCard(egg) {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'group text-left';
+    card.setAttribute('aria-label', 'View ' + egg.title);
+    card.innerHTML =
+        '<div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-panel">' +
+        '<span class="egg-ph" aria-hidden="true"></span>' +
+        '<img src="' + egg.img + '" alt="' + egg.title + '" loading="lazy" ' +
+        'class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+        'onerror="this.remove()">' +
+        '</div>' +
+        '<h3 class="mt-3 font-display text-base sm:text-lg">' + egg.title + '</h3>' +
+        '<p class="text-xs text-dust sm:text-sm">' + egg.note + '</p>';
+    card.addEventListener('click', () => openLightbox(egg));
+    return card;
+}
+
+// Adds the next batch of eggs underneath the ones already shown
+function showMore() {
+    const next = currentList.slice(shownCount, shownCount + EGGS_PER_PAGE);
+    next.forEach((egg) => gallery.appendChild(createCard(egg)));
+    shownCount += next.length;
+    updateStatus();
+}
+
+// Starts a fresh list (first load, or a new search) from the first batch
+function renderGallery(list) {
+    currentList = list;
+    shownCount = 0;
+    gallery.innerHTML = '';
+    showMore();
+}
+
+// The line under the search box, and the Load more button
+function updateStatus() {
+    const query = searchInput.value.trim();
+    const total = currentList.length;
+    const parts = [];
+    if (query) parts.push(total + (total === 1 ? ' egg matches' : ' eggs match') + ' "' + query + '"');
+    if (total > EGGS_PER_PAGE) parts.push('Showing ' + shownCount + ' of ' + total);
+    searchStatus.textContent = parts.join('. ');
+    loadMoreWrap.hidden = shownCount >= total;
+}
+loadMoreBtn.addEventListener('click', showMore);
 
 // ---- Search: matches every word against the title, note, details and hidden keywords ----
 function applySearch() {
     const query = searchInput.value.trim().toLowerCase();
     const words = query.split(/\s+/).filter(Boolean);
-    const results = EGGS.filter((egg) => {
+    const results = shuffledEggs.filter((egg) => {
         const keywords = Array.isArray(egg.keywords) ? egg.keywords.join(' ') : (egg.keywords || '');
         const text = (egg.title + ' ' + egg.note + ' ' + (egg.details || '') + ' ' + keywords).toLowerCase();
         return words.every((w) => text.includes(w));
@@ -46,14 +86,11 @@ function applySearch() {
     renderGallery(results);
     searchClear.hidden = !query;
     noResults.hidden = results.length > 0;
-    searchStatus.textContent = query
-        ? results.length + (results.length === 1 ? ' egg matches' : ' eggs match') + ' "' + searchInput.value.trim() + '"'
-        : '';
 }
 searchInput.addEventListener('input', applySearch);
 searchClear.addEventListener('click', () => { searchInput.value = ''; applySearch(); searchInput.focus(); });
 
-renderGallery(EGGS);
+renderGallery(shuffledEggs);
 
 // ---- Lightbox ----
 const lb = document.getElementById('lightbox');
