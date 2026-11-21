@@ -143,15 +143,31 @@ copyBtn.addEventListener('click', async () => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ---- Hero egg: start the frame animation once the image strip has loaded ----
-const eggAnim = document.getElementById('egg-anim');
-if (eggAnim) {
-    const eggStrip = new Image();
-    const startEgg = () => eggAnim.classList.add('play');
-    eggStrip.onload = startEgg;
-    eggStrip.onerror = () => {
-        console.warn('EggDust: could not load images/egg-animation.svg. Check the file is in the images folder with this exact name.');
-        startEgg();
-    };
-    eggStrip.src = 'images/egg-animation.svg';
-}
+// ---- Hero egg: the open-eye photo blinks at random times by briefly showing the closed-eye photo on top ----
+(function () {
+    const BLINK_MIN_MS = 500;    // shortest wait between blinks (half a second)
+    const BLINK_MAX_MS = 5000;   // longest wait between blinks (five seconds)
+    const BLINK_HOLD_MS = 120;   // how long the eye stays shut. Was 160
+
+    const egg = document.getElementById('egg-eye');
+    if (!egg) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;   // stays open
+
+    let onScreen = true;
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => { onScreen = entries[0].isIntersecting; }).observe(egg);
+    }
+
+    function nextBlink() {
+        const wait = BLINK_MIN_MS + Math.random() * (BLINK_MAX_MS - BLINK_MIN_MS);
+        setTimeout(() => {
+            if (document.hidden || !onScreen) { nextBlink(); return; }   // no blinking while nobody can see it
+            egg.classList.add('blinking');
+            setTimeout(() => { egg.classList.remove('blinking'); nextBlink(); }, BLINK_HOLD_MS);
+        }, wait);
+    }
+
+    // Wait until both photos have loaded so a blink never shows a half-loaded egg
+    const imgs = Array.from(egg.querySelectorAll('img'));
+    Promise.all(imgs.map((img) => img.decode ? img.decode().catch(() => {}) : Promise.resolve())).then(nextBlink);
+})();

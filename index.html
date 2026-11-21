@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
-  <link rel="preload" href="images/egg-animation.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="images/openeye.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="tailwind.css?v=1">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body class="bg-ink text-shell font-sans antialiased">
 
@@ -36,8 +36,11 @@
         </div>
       </div>
 
-      <!-- Egg with an eye: a strip of 40 frames, played once (see .egg-anim in style.css and the end of script.js) -->
-      <div id="egg-anim" class="egg-anim" role="img" aria-label="Beginnings and endings"></div>
+      <!-- Egg with an eye: the open-eye photo with the closed-eye photo on top, which shows briefly to make it blink (see .egg-eye in style.css and the end of script.js) -->
+      <div id="egg-eye" class="egg-eye" role="img" aria-label="Beginnings and endings">
+        <img src="images/openeye.webp" alt="" width="578" height="658" draggable="false">
+        <img src="images/closedeye.webp" alt="" width="578" height="658" draggable="false" class="egg-eye-closed">
+      </div>
 
       <!-- RED Art watermark: see-through, in its own row underneath -->
       <span aria-hidden="true" class="redart-mark pointer-events-none select-none whitespace-nowrap font-display font-medium leading-none">RED Art</span>
@@ -126,7 +129,7 @@
   </dialog>
 
   <script src="eggs.js?v=2"></script>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
   <script src="details.js?v=1"></script>
 </body>
 </html>
