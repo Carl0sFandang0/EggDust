@@ -47,6 +47,19 @@ html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 .faq-answer { padding: 0 0 1.25rem; color: #98a4a8; line-height: 1.7; }
 .faq-answer p + p { margin-top: 0.75rem; }
 
+/* Links inside FAQ answers, and the picture pop-up they can open */
+/* Link colour: a brighter version of the RED Art red (#8e1b2b itself is too dark to read as text).
+   Change --faq-link for the colour and --faq-link-hover for the colour when the mouse is over it. */
+.faq-link { --faq-link: #e0475c; --faq-link-hover: #ee6b7e;
+  color: var(--faq-link); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #8e1b2b; }
+.faq-link:hover { color: var(--faq-link-hover); text-decoration-color: currentColor; }
+.faq-link-image { cursor: zoom-in; }
+.img-popup { margin: auto; max-width: min(92vw, 40rem); padding: 1rem; color: #e9e4da; background: #1a2025; border: 1px solid #2a3238; border-radius: 1rem; }
+.img-popup img { display: block; max-width: 100%; max-height: 72vh; margin: 0 auto; border-radius: 0.75rem; cursor: zoom-out; }
+.img-popup p { margin-top: 0.75rem; font-size: 0.875rem; color: #98a4a8; }
+.img-popup button { margin-top: 0.75rem; padding: 0.5rem 1.25rem; font-size: 0.875rem; color: inherit; background: none; border: 1px solid #2a3238; border-radius: 9999px; cursor: pointer; }
+.img-popup button:hover { border-color: #98a4a8; }
+
 /* Shown behind a photo until you add the real image */
 .egg-ph {
   display: block;

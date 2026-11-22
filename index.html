@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
   <link rel="preload" href="images/openeye.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="tailwind.css?v=1">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body class="bg-ink text-shell font-sans antialiased">
 
@@ -137,9 +137,16 @@
     <div id="lb-details" hidden class="mt-4 space-y-3 border-t border-line pt-4 text-sm leading-relaxed text-dust"></div>
   </dialog>
 
+  <!-- Picture pop-up for links inside FAQ answers -->
+  <dialog id="img-popup" class="img-popup">
+    <img id="img-popup-pic" alt="">
+    <p id="img-popup-caption"></p>
+    <button type="button" id="img-popup-close">Close</button>
+  </dialog>
+
   <script src="eggs.js?v=2"></script>
-  <script src="faq.js?v=1"></script>
-  <script src="script.js?v=8"></script>
+  <script src="faq.js?v=2"></script>
+  <script src="script.js?v=9"></script>
   <script src="details.js?v=1"></script>
 </body>
 </html>
