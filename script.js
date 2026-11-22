@@ -92,6 +92,51 @@ searchClear.addEventListener('click', () => { searchInput.value = ''; applySearc
 
 renderGallery(shuffledEggs);
 
+// ---- FAQ answers can hold links written as [words to click](address) ----
+// A link to a picture (.jpg .jpeg .png .webp .gif .avif) opens in a pop-up window on this page.
+// Any other link opens in a new tab, so visitors never lose their place.
+const imgPopup = document.getElementById('img-popup');
+const imgPopupPic = document.getElementById('img-popup-pic');
+const imgPopupCaption = document.getElementById('img-popup-caption');
+function openImagePopup(src, caption) {
+    imgPopupPic.style.display = '';
+    imgPopupPic.onerror = () => { imgPopupPic.style.display = 'none'; imgPopupCaption.textContent = 'Sorry, that picture could not be loaded.'; };
+    imgPopupPic.src = src;
+    imgPopupPic.alt = caption;
+    imgPopupCaption.textContent = caption;
+    imgPopup.showModal();
+}
+document.getElementById('img-popup-close').addEventListener('click', () => imgPopup.close());
+imgPopup.addEventListener('click', (e) => { if (e.target === imgPopup) imgPopup.close(); });
+imgPopupPic.addEventListener('click', () => imgPopup.close());
+imgPopup.addEventListener('close', () => { imgPopupPic.removeAttribute('src'); });
+
+function addFaqText(parent, text) {
+    const pattern = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+    let last = 0, m;
+    while ((m = pattern.exec(text)) !== null) {
+        parent.appendChild(document.createTextNode(text.slice(last, m.index)));
+        const label = m[1], url = m[2];
+        if (!/^(https?:|mailto:|[^:]*$)/i.test(url)) {          // ignore anything odd such as javascript:
+            parent.appendChild(document.createTextNode(label));
+        } else {
+            const a = document.createElement('a');
+            a.textContent = label;
+            a.href = url;
+            if (/\.(jpe?g|png|webp|gif|avif)(\?.*)?$/i.test(url)) {
+                a.className = 'faq-link faq-link-image';
+                a.addEventListener('click', (e) => { e.preventDefault(); openImagePopup(url, label); });
+            } else {
+                a.className = 'faq-link';
+                if (!/^mailto:/i.test(url)) { a.target = '_blank'; a.rel = 'noopener'; }
+            }
+            parent.appendChild(a);
+        }
+        last = m.index + m[0].length;
+    }
+    parent.appendChild(document.createTextNode(text.slice(last)));
+}
+
 // ---- FAQ: built from the list in faq.js ----
 const faqSection = document.getElementById('faq');
 const faqList = document.getElementById('faq-list');
@@ -106,7 +151,7 @@ if (typeof FAQS === 'undefined') {
         answer.className = 'faq-answer';
         String(item.a).split(/\n\s*\n/).forEach((text) => {
             const p = document.createElement('p');
-            p.textContent = text.trim();
+            addFaqText(p, text.trim());
             answer.appendChild(p);
         });
         box.append(question, answer);
