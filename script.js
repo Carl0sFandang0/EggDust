@@ -92,6 +92,29 @@ searchClear.addEventListener('click', () => { searchInput.value = ''; applySearc
 
 renderGallery(shuffledEggs);
 
+// ---- FAQ: built from the list in faq.js ----
+const faqSection = document.getElementById('faq');
+const faqList = document.getElementById('faq-list');
+if (typeof FAQS === 'undefined') {
+    console.error('EggDust: faq.js did not load. Check it is uploaded next to index.html and loaded before script.js.');
+} else if (FAQS.length) {
+    FAQS.forEach((item) => {
+        const box = document.createElement('details');
+        const question = document.createElement('summary');
+        question.textContent = item.q;
+        const answer = document.createElement('div');
+        answer.className = 'faq-answer';
+        String(item.a).split(/\n\s*\n/).forEach((text) => {
+            const p = document.createElement('p');
+            p.textContent = text.trim();
+            answer.appendChild(p);
+        });
+        box.append(question, answer);
+        faqList.appendChild(box);
+    });
+    faqSection.hidden = false;
+}
+
 // ---- Lightbox ----
 const lb = document.getElementById('lightbox');
 const lbImg = document.getElementById('lb-img');

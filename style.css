@@ -32,6 +32,21 @@ html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
   pointer-events: none;
 }
 
+/* FAQ: each question opens and closes its answer (built in script.js from faq.js) */
+.faq-list details { border-bottom: 1px solid #2a3238; }
+.faq-list details:first-child { border-top: 1px solid #2a3238; }
+.faq-list summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1rem 0; cursor: pointer; list-style: none;
+  font-family: Fraunces, Georgia, serif; font-size: 1.125rem;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; flex: none; font-family: inherit; font-size: 1.5rem; line-height: 1; color: #9bc4b8; }
+.faq-list details[open] summary::after { content: "\2212"; }
+.faq-list summary:hover { color: #fff; }
+.faq-answer { padding: 0 0 1.25rem; color: #98a4a8; line-height: 1.7; }
+.faq-answer p + p { margin-top: 0.75rem; }
+
 /* Shown behind a photo until you add the real image */
 .egg-ph {
   display: block;

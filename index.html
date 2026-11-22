@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EggDust | Drawn and milled goose eggs</title>
-  <meta name="description" content="Decorated Goose Eggs. Milled or drawn on. Browse the work and get in touch.">
+  <title>EggDust | Drawn and milled eggs</title>
+  <meta name="description" content="Decorated Eggs. Milled, painted, drawn on. Browse the work and get in touch.">
   <meta name="theme-color" content="#12161a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
   <link rel="preload" href="images/openeye.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="tailwind.css?v=1">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body class="bg-ink text-shell font-sans antialiased">
 
@@ -20,6 +20,7 @@
     <nav class="flex gap-6 text-sm text-dust" aria-label="Main">
       <a class="hover:text-shell" href="#work">Work</a>
       <a class="hover:text-shell" href="#about">About</a>
+      <a class="hover:text-shell" href="#faq">FAQ</a>
       <a class="hover:text-shell" href="#contact">Contact</a>
     </nav>
   </header>
@@ -28,8 +29,8 @@
     <!-- Hero -->
     <section class="relative mx-auto grid max-w-6xl items-center gap-10 overflow-hidden px-6 pb-10 pt-10 md:grid-cols-2 md:pt-16">
       <div class="relative z-10">
-        <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Goose eggs.<br />Milled & Marked.</h1>
-        <p class="mt-6 max-w-md text-lg text-dust">Each egg is milled or marked individually using a diamond burr and various artists materials. A few are gilded using 24ct gold leaf. A truly unique gift for someone special.</p>
+        <h1 class="font-display text-4xl font-light leading-tight sm:text-5xl lg:text-6xl">Milled & Marked Eggs.</h1>
+        <p class="mt-6 max-w-md text-lg text-dust">Each egg is milled or marked individually using a diamond burr and various artists materials. A few are gilded using 24ct gold leaf. A truly unique gift for a special person or occasion.</p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="#work" class="rounded-full bg-shell px-6 py-3 text-sm font-medium text-ink hover:bg-white">See the eggs</a>
           <a href="#contact" class="rounded-full border border-line px-6 py-3 text-sm font-medium hover:border-dust">Get in touch</a>
@@ -73,7 +74,15 @@
         <h2 class="font-display text-3xl font-light">About</h2>
         <!-- Edit this text to tell your own story -->
         <p class="mt-5 leading-relaxed text-dust"><span class="font-medium text-redart brightness-150">RED Art:</span> Real Egg Dust Art.</p>
-        <p class="mt-4 leading-relaxed text-dust">I draw onto goose eggs and mill patterns into the shell. I use natural goose egg shells sourced from Germany. No two are quite alike. If you would like to talk about a piece, I would be glad to hear from you.</p>
+        <p class="mt-4 leading-relaxed text-dust">I draw onto goose and duck eggs and mill patterns into the shell. I use real eggs sourced from Germany and the UK. No two are quite alike. If you would like to talk about a piece or suggest an idea, I would be glad to hear from you.</p>
+      </div>
+    </section>
+
+    <!-- FAQ: the questions and answers are in faq.js -->
+    <section id="faq" class="mx-auto max-w-6xl px-6 py-16" hidden>
+      <div class="max-w-xl">
+        <h2 class="font-display text-3xl font-light">Questions</h2>
+        <div id="faq-list" class="faq-list mt-6"></div>
       </div>
     </section>
 
@@ -110,7 +119,7 @@
   </main>
 
   <footer class="mx-auto max-w-6xl border-t border-line px-6 py-8 text-sm text-dust">
-    &copy; <span id="year"></span> EggDust. All eggs are real. All designs are my own work. <span class="text-redart brightness-150">RED Art</span>: Real Egg Dust Art.
+    &copy; <span id="year"></span> EggDust. All eggs are real. Design inspiration from various sources. <span class="text-redart brightness-150">RED Art</span>: Real Egg Dust Art.
   </footer>
 
   <!-- Lightbox -->
@@ -129,7 +138,8 @@
   </dialog>
 
   <script src="eggs.js?v=2"></script>
-  <script src="script.js?v=7"></script>
+  <script src="faq.js?v=1"></script>
+  <script src="script.js?v=8"></script>
   <script src="details.js?v=1"></script>
 </body>
 </html>
