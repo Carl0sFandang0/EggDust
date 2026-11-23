@@ -45,7 +45,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 .faq-list details[open] summary::after { content: "\2212"; }
 .faq-list summary:hover { color: #fff; }
 .faq-answer { padding: 0 0 1.25rem; color: #98a4a8; line-height: 1.7; }
-.faq-answer p + p { margin-top: 0.75rem; }
+.faq-answer p + p, .faq-answer p + ul, .faq-answer ul + p, .faq-answer ul + ul { margin-top: 0.75rem; }
+.faq-answer ul { list-style: disc; padding-left: 1.4rem; }
+.faq-answer li { padding-left: 0.2rem; }
+.faq-answer li + li { margin-top: 0.35rem; }
+.faq-answer li::marker { color: #e0475c; }
 
 /* Links inside FAQ answers, and the picture pop-up they can open */
 /* Link colour: a brighter version of the RED Art red (#8e1b2b itself is too dark to read as text).

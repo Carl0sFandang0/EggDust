@@ -149,10 +149,30 @@ if (typeof FAQS === 'undefined') {
         question.textContent = item.q;
         const answer = document.createElement('div');
         answer.className = 'faq-answer';
-        String(item.a).split(/\n\s*\n/).forEach((text) => {
-            const p = document.createElement('p');
-            addFaqText(p, text.trim());
-            answer.appendChild(p);
+        // A blank line starts a new paragraph. Lines that begin with "- " (or "* ") become a bulleted list.
+        String(item.a).split(/\n\s*\n/).forEach((block) => {
+            let paragraph = [], list = null;
+            const endParagraph = () => {
+                if (!paragraph.length) return;
+                const p = document.createElement('p');
+                addFaqText(p, paragraph.join(' '));
+                answer.appendChild(p);
+                paragraph = [];
+            };
+            block.split('\n').forEach((line) => {
+                const bullet = line.match(/^\s*[-*\u2022]\s+(.+)$/);
+                if (bullet) {
+                    endParagraph();
+                    if (!list) { list = document.createElement('ul'); answer.appendChild(list); }
+                    const li = document.createElement('li');
+                    addFaqText(li, bullet[1].trim());
+                    list.appendChild(li);
+                } else if (line.trim()) {
+                    list = null;
+                    paragraph.push(line.trim());
+                }
+            });
+            endParagraph();
         });
         box.append(question, answer);
         faqList.appendChild(box);
