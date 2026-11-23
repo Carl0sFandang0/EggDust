@@ -43,7 +43,7 @@ const FAQS = [
     },
     {
         q: 'Are the eggs easily broken?',
-        a: 'If the egg is to be milled, I coat the inside with a fine layer of clear resin. Even if the egg were cracked by mishandling, the internal layer bonds tightly to the pores in the shell and keeps the egg strong. For non milled eggs, the blown goose eggs are surprisingly strong but on request I could still resin coat the inside for added protection. I have designed a [machine](images/my_rotator.jpg) to ensure the coating is even and thorough.'
+        a: 'If the egg is to be milled, I coat the inside with a fine layer of clear resin. Even if the egg were cracked by mishandling, the internal layer bonds tightly to the pores in the shell and keeps the egg strong. For non milled eggs, the blown goose eggs are surprisingly strong but on request I could still resin coat the inside for added protection. I have an [egg rotating machine](images/my_rotator.jpg) to ensure the coating is even and thorough.'
     },
     {
         q: 'Can I buy an egg, or ask about one?',
