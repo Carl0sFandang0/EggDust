@@ -113,8 +113,7 @@ const EGGS = [
             BUT YOU... YOU MAY CALL ME AGONY.
 
             AND I AM PLEASED TO MAKE YOUR ACQUAINTANCE...`,
-        keywords: `duck egg spiral text poem blood ink watercolour watercolor Katy Towell pain death
-            agony`
+        keywords: 'duck egg spiral text blood ink watercolour watercolor pain death'
     },
     {
         title: 'Alice',
@@ -122,8 +121,7 @@ const EGGS = [
         img: 'images/alice_party_ink.webp',
         details: `Drawn in ballpoint pen on a duck egg. It shows the March Hare, the Dormouse and
             the Mad Hatter from Alice's Mad Tea Party`,
-        keywords: `duck egg alice looking glass mad hatter dormouse tea party march hare fantasy
-            lewis carroll`
+        keywords: 'duck egg looking glass hatter dormouse march hare fantasy lewis carroll'
     },
     {
         title: 'Alice',
@@ -131,28 +129,28 @@ const EGGS = [
         img: 'images/alice_party2_ink.webp',
         details: `Drawn in ballpoint pen on a duck egg. It shows the Mad Hatter from Alice's Mad Tea
             Party`,
-        keywords: 'duck egg alice looking glass mad hatter tea party fantasy lewis carroll'
+        keywords: 'duck egg looking glass hatter fantasy lewis carroll'
     },
     {
         title: 'Alice',
         note: 'Alice through the looking glass',
         img: 'images/alice_party4_ink.webp',
         details: 'Drawn in ballpoint pen on a duck egg. It shows Alice from Alice\'s Mad Tea Party',
-        keywords: 'duck egg alice looking glass tea party fantasy lewis carroll'
+        keywords: 'duck egg tea party fantasy lewis carroll'
     },
     {
         title: 'Bee',
         note: 'Bumble bee',
         img: 'images/bee_ink_and_acrylic.webp',
         details: 'Zentangle bee drawn on a duck egg in gel pen and coloured in acrylic',
-        keywords: 'zentangle bee acrylic gel pen duck egg'
+        keywords: 'zentangle acrylic gel pen duck egg'
     },
     {
         title: 'Beinn Alligin',
         note: 'Jewelled Mountain on the Torridon Ridge',
         img: 'images/ben_something_pencil.webp',
         details: 'Pencil sketch of Beinn Alligin, Scotland. Drawn on duck egg.',
-        keywords: 'Beinn Alligin duck egg pencil scenery mountain'
+        keywords: 'duck egg pencil scenery'
     },
     {
         title: 'Face',
@@ -161,7 +159,7 @@ const EGGS = [
         details: `A duck egg has been sprayed black and the image has been scratched out of the
             black using a diamond tipped dentist drill. The image shows the terror in the eyes of a
             man who has seen too much.`,
-        keywords: 'terror face duck egg scratch fear eyes diamond dentist drill sprayed black'
+        keywords: 'terror duck egg scratch eyes diamond dentist drill sprayed black'
     },
     {
         title: 'Shape',
@@ -169,7 +167,7 @@ const EGGS = [
         img: 'images/blue_and_gold_blown_pattern.webp',
         details: `Blue acrylic blown into a pattern with 24ct gold leaf stripe overlaid. On duck egg
             with a matt protective varnish`,
-        keywords: 'Blue gold acrylic duck egg blown art'
+        keywords: 'acrylic duck egg blown'
     },
     {
         title: 'Cat & Dog',
@@ -178,7 +176,7 @@ const EGGS = [
         details: `The simplistic cats and dogs are based on my daughter's button eye toys and
             represent a room full of 'odd one outs', each talking their own language but still
             having a good time together! Drawn in fine felt tip and painted roughly in watercolour`,
-        keywords: 'childlike simplistic cat & dog odd one out duck egg good time'
+        keywords: 'simplistic odd one out duck egg good time'
     },
     {
         title: 'Tree of life',
@@ -186,7 +184,7 @@ const EGGS = [
         img: 'images/celtic_band_ink1.webp',
         details: `Celtic style tree of life knotwork design with a person's initials. Drawn using
             black ballpoint pen on a duck egg`,
-        keywords: 'celtic tree of life knotwork initials ballpoint duck egg'
+        keywords: 'knotwork ballpoint duck egg'
     },
     {
         title: 'Celtic band',
@@ -194,21 +192,21 @@ const EGGS = [
         img: 'images/celtic_band_ink2.webp',
         details: `Celtic style tree of life knotwork design with a matching band. Drawn using black
             ballpoint pen on a duck egg`,
-        keywords: 'celtic tree of life knotwork band initials ballpoint duck egg'
+        keywords: 'knotwork initials ballpoint duck egg'
     },
     {
         title: 'Celtic band',
         note: 'Celtic band.',
         img: 'images/celtic_band_ink3.webp',
         details: 'Celtic band drawn using black ballpoint pen on a duck egg',
-        keywords: 'celtic band initials ballpoint duck egg'
+        keywords: 'initials ballpoint duck egg'
     },
     {
         title: 'Child',
         note: 'Pencil sketch of a child',
         img: 'images/child_profile_pencil.webp',
         details: 'Pencil sketch of a child drawn on a duck egg',
-        keywords: 'child pencil duck egg sketch'
+        keywords: 'duck egg portrait face kid'
     },
     {
         title: 'City Scape',
@@ -216,7 +214,7 @@ const EGGS = [
         img: 'images/city_scape1_ink.webp',
         details: `London skyline drawn in gel pen on a duck egg. Scene shows the London Eye, Big Ben
             and Tower Bridge`,
-        keywords: 'skyline london eye duck egg big ben tower bridge gel pen'
+        keywords: 'eye duck egg big ben tower bridge gel pen'
     },
     {
         title: 'City Scape',
@@ -224,7 +222,7 @@ const EGGS = [
         img: 'images/city_scape2_ink.webp',
         details: `London skyline drawn in gel pen on a duck egg. Scene shows Tower Bridge, the
             Gherkin, the Sky Garden and others`,
-        keywords: 'skyline london eye duck egg tower bridge gherkin sky garden gel pen'
+        keywords: 'eye duck egg tower bridge gherkin garden gel pen'
     },
     {
         title: 'City Scape',
@@ -232,7 +230,7 @@ const EGGS = [
         img: 'images/city_scape4_ink.webp',
         details: `London skyline drawn in gel pen on a duck egg. Scene shows the Walkie-talkie, the
             Gherkin, the Sky Garden and others`,
-        keywords: `skyline london eye duck egg walkie-talkie tower bridge gherkin sky garden gel pen`
+        keywords: 'eye duck egg walkie-talkie tower bridge gherkin garden gel pen'
     },
     {
         title: 'Clown',
@@ -240,14 +238,14 @@ const EGGS = [
         img: 'images/clown_ink_and_acrylic.webp',
         details: `The best children's stories are creepy. And the best characters are scary. Just
             what you need before bedtime! Drawn in ink and acrylic on a duck egg`,
-        keywords: 'scary horror spooky halloween jester circus clown dark duck egg'
+        keywords: 'scary horror spooky halloween jester circus dark duck egg'
     },
     {
         title: 'Dandelions',
         note: 'A field of pencilled dandelions',
         img: 'images/dandelions_pencil_mounted.webp',
         details: 'Dandelions pencilled on a duck egg',
-        keywords: 'dandelions field pencil duck egg'
+        keywords: 'duck egg flowers weed seed meadow nature'
     },
     {
         title: 'Desiderata',
@@ -291,14 +289,14 @@ const EGGS = [
             labors and aspirations, in the noisy confusion of life, keep peace in your soul. With
             all its sham, drudgery and broken dreams, it is still a beautiful world. Be cheerful.
             Strive to be happy.`,
-        keywords: 'desiderata max ehrmann poem spiral text gel pen duck egg'
+        keywords: 'max ehrmann gel pen duck egg'
     },
     {
         title: 'Cat & Dog',
         note: 'Cat & Dog on a cracked duck egg',
         img: 'images/dog_and_cat_ink_cracked.webp',
         details: 'Gel pen drawing on a duck egg. Cracked during drawing',
-        keywords: 'gel pen cracked cat & dog duck egg'
+        keywords: 'gel pen pets animals drawing'
     },
     {
         title: 'Dog',
@@ -306,49 +304,49 @@ const EGGS = [
         img: 'images/dog_pencil.webp',
         details: `Dog is sketched in pencil on a duck egg. The top has been milled. Black plastic
             mount`,
-        keywords: 'mounted pet dog sketch pencil duck egg'
+        keywords: 'mounted duck egg'
     },
     {
         title: 'Ghost',
         note: 'Pencil sketch of an Edinburgh ghost',
         img: 'images/edinburgh_man.webp',
         details: 'Pencil sketch on duck egg of an Edinburgh ghost',
-        keywords: 'pencil sketch duck egg Edinburgh ghost man hat'
+        keywords: 'duck egg man hat'
     },
     {
         title: 'Face',
         note: 'Cartoon thug',
         img: 'images/face_1_ink.webp',
         details: 'Cartoon thug sketched in gel pen on duck egg',
-        keywords: 'cartoon thug face gel pen duck egg sketch thinning'
+        keywords: 'gel pen duck egg sketch thinning'
     },
     {
         title: 'Face',
         note: 'Cartoon thug',
         img: 'images/face_2_ink.webp',
         details: 'Cartoon thug sketched in gel pen on duck egg',
-        keywords: 'cartoon thug face gel pen duck egg sketch bearded'
+        keywords: 'gel pen duck egg sketch bearded'
     },
     {
         title: 'Face',
         note: 'Cartoon thug',
         img: 'images/face_3_ink.webp',
         details: 'Cartoon thug sketched in gel pen on duck egg',
-        keywords: 'cartoon thug face gel pen duck egg sketch skinhead mustache'
+        keywords: 'gel pen duck egg sketch skinhead mustache'
     },
     {
         title: 'Face',
         note: 'Cartoon thug',
         img: 'images/face_4_ink.webp',
         details: 'Cartoon thug sketched in gel pen on duck egg',
-        keywords: 'cartoon thug face gel pen duck egg sketch skinhead moustache'
+        keywords: 'gel pen duck egg sketch skinhead moustache'
     },
     {
         title: 'Graffiti',
         note: 'Graffiti I saw in Cyprus',
         img: 'images/greek_graffiti_ink.webp',
         details: 'Graffiti I saw in Cyprus near the Northern border with Turkey',
-        keywords: 'graffiti cyprus northern border turkey foreign'
+        keywords: 'northern border turkey foreign'
     },
     {
         title: 'Shape',
@@ -356,28 +354,28 @@ const EGGS = [
         img: 'images/green_and_gold_blown_pattern2_acrylic.webp',
         details: `Green acrylic blown into a pattern with 24ct gold leaf stripe overlaid. On duck
             egg with a matt protective varnish`,
-        keywords: 'Green gold leaf acrylic duck egg blown art'
+        keywords: 'leaf acrylic duck egg blown'
     },
     {
         title: 'Happy Days',
         note: 'Sketch of the dancing flowers on my car dashboard',
         img: 'images/happy_days_pencil.webp',
         details: 'Dancing flowers in pencil on duck egg',
-        keywords: 'car dashboard dancing flowers pencil duck egg'
+        keywords: 'pencil duck egg'
     },
     {
         title: 'Jigsaw',
         note: 'Jigsaw pieces milled into a duck egg',
         img: 'images/jigsaw_pencil.webp',
         details: 'Jigsaw pieces milled into a duck egg',
-        keywords: 'milled jigsaw duck egg'
+        keywords: 'puzzle game holes pierced cutwork carved openwork white eggshell sculpture'
     },
     {
         title: 'Stripes',
         note: 'Stripes in a duck egg',
         img: 'images/lattice_egg_small_pic.webp',
         details: 'Wide diagonal stripes milled into a duck egg',
-        keywords: 'stripes diagonal milled duck egg heavy wide'
+        keywords: 'diagonal milled heavy wide'
     },
     {
         title: 'Milled',
@@ -387,50 +385,321 @@ const EGGS = [
             Gilded notes have carefully been applied with 24ct gold leaf and special adhesive.
             Initials have been milled in the band and the egg is finished with a fine matt varnish
             to protect the gold.`,
-        keywords: 'duck egg gilded 24ct gold leaf milled lattice initials matt varnish '
+        keywords: 'duck egg 24ct gold leaf lattice matt varnish'
     },
     {
         title: 'Milled',
         note: 'Milled holes',
         img: 'images/milled_holes.webp',
         details: 'A swirling pattern of varying sized holes milled into a duck egg',
-        keywords: 'swirling pattern milled holes duck egg'
+        keywords: 'swirling pattern duck egg'
     },
-    { title: 'Milled', note: 'Note...', img: 'images/milled_pattern_1.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/milled_pattern_2.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/milled_pattern_3.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/milled_pattern_fragile.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/milled_top_gold_leaf.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/milled_top2.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/milled2.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Mrs Humpty', note: 'Note...', img: 'images/mrs_humpty_ink.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/musical_milled_gold_mounted.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/musical_milled_gold_mounted2.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Old House', note: 'Note...', img: 'images/old_house_pencil.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Old Man', note: 'Note...', img: 'images/old_man_sprayed_and_scratched.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Milled', note: 'Note...', img: 'images/open_lace_milled.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Owl', note: 'Note...', img: 'images/owl_pencil.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Painted', note: 'Note...', img: 'images/painted_goose_egg1.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Painted', note: 'Note...', img: 'images/painted_goose_egg2.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Peace', note: 'Note...', img: 'images/peace1.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Dog', note: 'Note...', img: 'images/pencil_and_watercolour_dog.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Heart', note: 'Note...', img: 'images/pencil_heart.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'House', note: 'Note...', img: 'images/pencil_house.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Kissing', note: 'Note...', img: 'images/pencil_kissing2.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Portrait', note: 'Note...', img: 'images/pencil_portrait.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Simple meadow', note: 'Note...', img: 'images/pencil_simple_meadow.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Worm', note: 'Note...', img: 'images/pencil_worm.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Poppy', note: 'Note...', img: 'images/poppy_ink_and_acrylic.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Ratty', note: 'Note...', img: 'images/ratty.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Reeds', note: 'Note...', img: 'images/reeds.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Man', note: 'Note...', img: 'images/someone_i_know_ink.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Spider', note: 'Note...', img: 'images/spider_pencil.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Sunflower', note: 'Note...', img: 'images/sunflower_ink_and_acrylic.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Sunshine days', note: 'Note...', img: 'images/sunshine_days_1_pencil.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Tree', note: 'Note...', img: 'images/tree_pencil.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Van Gogh', note: 'Note...', img: 'images/van_gogh_pencil.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Voronoi', note: 'Note...', img: 'images/voronoi_lace_milled_damaged.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Flower', note: 'Note...', img: 'images/wire_flower_ink_and_acrylic.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Xmas dec', note: 'Note...', img: 'images/xmas_dec_milled.webp',details: 'Details...', keywords: 'Keywords...' },
-    { title: 'Xmas dec', note: 'Note...', img: 'images/xmas_dec_milled2.webp',details: 'Details...', keywords: 'Keywords...' }
+    {
+        title: 'Milled',
+        note: 'Winding maze-like pattern milled through the shell',
+        img: 'images/milled_pattern_1.webp',
+        details: `A winding, maze-like pattern of channels milled right through the eggshell,
+            leaving a delicate open lattice.`,
+        keywords: `pierced cutwork carved fretwork openwork lace organic wavy meandering labyrinth
+            camouflage eggshell sculpture`
+    },
+    {
+        title: 'Milled',
+        note: 'Interlocking oval rings milled through the shell',
+        img: 'images/milled_pattern_2.webp',
+        details: `Overlapping oval rings milled through the shell, leaving a lattice of fine bands
+            around the egg.`,
+        keywords: `pierced cutwork carved openwork lace circles ovals loops geometric pattern
+            eggshell sculpture`
+    },
+    {
+        title: 'Milled',
+        note: 'Symmetrical curved lattice with two solid round panels',
+        img: 'images/milled_pattern_3.webp',
+        details: `A symmetrical design of curved arches and bands milled through the shell. Two
+            solid round panels are left uncut at the base.`,
+        keywords: `pierced cutwork carved openwork arches curves geometric lace shell eggshell
+            sculpture white`
+    },
+    {
+        title: 'Milled',
+        note: 'Fragile cage of fine milled bands',
+        img: 'images/milled_pattern_fragile.webp',
+        details: `Most of the shell has been milled away, leaving a delicate cage of thin bands that
+            wrap around the egg.`,
+        keywords: `pierced cutwork carved openwork ribs stripes lines delicate thin lace shell
+            eggshell sculpture`
+    },
+    {
+        title: 'Milled',
+        note: 'Milled lace top with gold leaf music notes',
+        img: 'images/milled_top_gold_leaf.webp',
+        details: `The top of this egg has been milled into a fine lace dome with a band of small
+            windows below. Music notes on a stave are applied in gold leaf.`,
+        keywords: `musical stave staff gilded gilt dome pierced cutwork carved openwork band
+            eggshell sculpture`
+    },
+    {
+        title: 'Milled',
+        note: 'Milled dome top with radiating slots',
+        img: 'images/milled_top2.webp',
+        details: `The top of this egg has been milled into a dome of radiating slots, with a band of
+            small windows beneath and more milled detail on the sides.`,
+        keywords: `lace pierced cutwork carved openwork rays windows band eggshell sculpture ornate
+            white`
+    },
+    {
+        title: 'Milled',
+        note: 'Milled script lettering lit from behind',
+        img: 'images/milled2.webp',
+        details: `Script lettering reading "40th Emma" milled into the shell, with a lace-milled
+            top. The egg is lit from inside to show the writing.`,
+        keywords: `Emma 40th birthday personalised personalized name gift writing text calligraphy
+            lace pierced cutwork carved eggshell sculpture`
+    },
+    {
+        title: 'Mrs Humpty',
+        note: 'Cartoon Mrs Humpty in black ink',
+        img: 'images/mrs_humpty_ink.webp',
+        details: `A cartoon Mrs Humpty drawn in black ink on an egg, with long wavy hair, a wide
+            grin and stick legs.`,
+        keywords: `character funny quirky dumpty nursery rhyme figure woman wife hair drawing pen
+            doodle comic`
+    },
+    {
+        title: 'Milled',
+        note: 'Milled lettering and gold leaf trim on a stand',
+        img: 'images/musical_milled_gold_mounted.webp',
+        details: `Script lettering reading "40th Emma" milled into the shell, between bands of
+            milled windows edged in gold leaf. Mounted on a black wooden stand.`,
+        keywords: `Emma 40th birthday personalised personalized name gift writing script text
+            calligraphy mounted lace pierced cutwork carved gilded eggshell sculpture`
+    },
+    {
+        title: 'Milled',
+        note: 'Gold leaf music notes on a mounted egg',
+        img: 'images/musical_milled_gold_mounted2.webp',
+        details: `Music notes on a gold leaf stave run around the middle of the egg, between milled
+            bands of small windows. The top is milled lace. Mounted on a black wooden stand.`,
+        keywords: `musical stave staff gilded gilt stand lace dome pierced cutwork carved openwork
+            band eggshell sculpture`
+    },
+    {
+        title: 'Old House',
+        note: 'Old stone houses in fine line',
+        img: 'images/old_house_pencil.webp',
+        details: `Fine line pencil drawing of old stone houses with gabled roofs and many windows,
+            drawn on an egg.`,
+        keywords: `building buildings cottage architecture street village townscape gables windows
+            roofs pencil sketch drawing`
+    },
+    {
+        title: 'Old Man',
+        note: 'Bearded old man scratched out of black',
+        img: 'images/old_man_sprayed_and_scratched.webp',
+        details: `The egg has been sprayed black and the face of a bearded old man scratched out of
+            the paint to reveal the white shell.`,
+        keywords: 'portrait face elderly scratchboard sprayed white dramatic stern grandfather'
+    },
+    {
+        title: 'Milled',
+        note: 'Open lace of overlapping circles milled through the shell',
+        img: 'images/open_lace_milled.webp',
+        details: `A dense lace pattern of overlapping circles milled right through the shell,
+            leaving the egg as an open cage.`,
+        keywords: `pierced cutwork carved openwork rings ovals netting lattice geometric eggshell
+            sculpture white`
+    },
+    {
+        title: 'Owl',
+        note: 'Owl with large round eyes in fine pencil',
+        img: 'images/owl_pencil.webp',
+        details: `An owl face drawn in fine pencil on an egg, with large round eyes and feathered
+            detail. Small slots have been milled in the top.`,
+        keywords: 'bird face feathers wildlife nature night owlet sketch drawing hatching stipple'
+    },
+    {
+        title: 'Painted',
+        note: 'Blue goose egg with a gold band',
+        img: 'images/painted_goose_egg1.webp',
+        details: `A goose egg painted blue with a fine grid of pale lines and a broad gold band,
+            finished with a glossy shine.`,
+        keywords: 'grid check glossy shiny varnish acrylic colourful color'
+    },
+    {
+        title: 'Painted',
+        note: 'Silver-grey goose egg with gold bands',
+        img: 'images/painted_goose_egg2.webp',
+        details: `A goose egg painted silver-grey with broad gold bands and fine gold lines sweeping
+            around it.`,
+        keywords: 'gray metallic stripes lines glossy shiny colourful color'
+    },
+    {
+        title: 'Peace',
+        note: 'The word PEACE beside an East Asian character',
+        img: 'images/peace1.webp',
+        details: `The word PEACE written downward in black ink, with a stippled East Asian character
+            on the other side of a fine dividing line.`,
+        keywords: `text lettering calligraphy kanji chinese japanese symbol black white ink pen
+            minimalist harmony`
+    },
+    {
+        title: 'Dog',
+        note: 'Grey dog in a red bandana',
+        img: 'images/pencil_and_watercolour_dog.webp',
+        details: `A pencil and watercolour portrait of a grey dog sitting in a red bandana, drawn on
+            an egg.`,
+        keywords: 'pet puppy hound canine animal scarf neckerchief watercolor sketch painting'
+    },
+    {
+        title: 'Heart',
+        note: 'Anatomical heart styled as a hand grenade',
+        img: 'images/pencil_heart.webp',
+        details: `A pencil drawing of an anatomical heart with the pin and lever of a hand grenade,
+            drawn on an egg.`,
+        keywords: `anatomy bomb love valentine romance medical engraving tattoo veins black white
+            pencil sketch`
+    },
+    {
+        title: 'Kissing',
+        note: 'Outline sketch of a kissing couple',
+        img: 'images/pencil_kissing2.webp',
+        details: 'A faint pencil outline sketch of two figures kissing, drawn on an egg.',
+        keywords: 'lovers love romance romantic valentine figures faint pencil drawing'
+    },
+    {
+        title: 'Portrait',
+        note: 'Pencil portrait of a smiling child',
+        img: 'images/pencil_portrait.webp',
+        details: 'A pencil portrait of a smiling young child, drawn on an egg with fine shading.',
+        keywords: 'kid toddler baby face smile happy photo realistic likeness shaded drawing sketch'
+    },
+    {
+        title: 'Simple meadow',
+        note: 'Wildflowers and grasses in fine line',
+        img: 'images/pencil_simple_meadow.webp',
+        details: 'A simple meadow of wildflowers and grasses drawn in fine line on an egg.',
+        keywords: `floral plants nature field botanical daisy countryside spring summer garden
+            drawing pencil pen`
+    },
+    {
+        title: 'Worm',
+        note: 'Monstrous worm with a toothy grin',
+        img: 'images/pencil_worm.webp',
+        details: `A monstrous worm with a wide mouth full of teeth and a drooling tongue, drawn in
+            fine pencil on an egg.`,
+        keywords: `monster creature horror scary spooky grotesque teeth mouth fantasy cartoon weird
+            gruesome pencil sketch drawing`
+    },
+    {
+        title: 'Poppy',
+        note: 'Red poppy outlined in ink',
+        img: 'images/poppy_ink_and_acrylic.webp',
+        details: `A red poppy with a yellow centre and green leaves, outlined in black ink and
+            coloured in acrylic.`,
+        keywords: `flower floral yellow green botanical remembrance petals plant nature colourful
+            color painting acrylic`
+    },
+    {
+        title: 'Ratty',
+        note: 'Rodent character with a speech bubble',
+        img: 'images/ratty.webp',
+        details: `A rodent character with big round ears, standing with a speech bubble, drawn in
+            fine pencil on an egg.`,
+        keywords: 'mouse cartoon whimsical storybook animal pencil sketch drawing'
+    },
+    {
+        title: 'Reeds',
+        note: 'Windswept reeds in sweeping pencil lines',
+        img: 'images/reeds.webp',
+        details: `Reeds bending in the wind, drawn with long sweeping pencil lines and dark seed
+            heads that wrap right around the egg.`,
+        keywords: `grass grasses windy marsh river lake water plants nature landscape bulrush sketch
+            drawing`
+    },
+    {
+        title: 'Man',
+        note: 'Bold black ink portrait with a moustache',
+        img: 'images/someone_i_know_ink.webp',
+        details: `A bold portrait of a man with a moustache and stubble, drawn in high-contrast
+            black ink lines on an egg.`,
+        keywords: `face mustache beard stubble stern eyes eyebrows high contrast white pen drawing
+            graphic`
+    },
+    {
+        title: 'Spider',
+        note: 'Large hairy spider in pencil',
+        img: 'images/spider_pencil.webp',
+        details: 'A large hairy spider with long jointed legs, drawn in pencil on an egg.',
+        keywords: `tarantula arachnid creepy insect bug spooky halloween horror scary eight legs
+            nature animal sketch drawing`
+    },
+    {
+        title: 'Sunflower',
+        note: 'Yellow sunflower in ink and acrylic',
+        img: 'images/sunflower_ink_and_acrylic.webp',
+        details: `A bright yellow sunflower with a brown centre and green stem, outlined in ink and
+            coloured in acrylic.`,
+        keywords: `floral green brown botanical petals plant nature summer garden colourful color
+            painting`
+    },
+    {
+        title: 'Sunshine days',
+        note: 'Flowers in pots with the words Sunshine Days',
+        img: 'images/sunshine_days_1_pencil.webp',
+        details: `A pencil drawing of flowers in pots, with the words Sunshine Days written in hand
+            lettering around the egg.`,
+        keywords: `plants garden happy cheerful lettering text naive childlike pencil sketch drawing`
+    },
+    {
+        title: 'Tree',
+        note: 'Bare tree with spreading branches',
+        img: 'images/tree_pencil.webp',
+        details: `A bare tree with a gnarled trunk and spreading branches, drawn in pencil with
+            dense dark shading on an egg.`,
+        keywords: `trunk winter nature woodland landscape silhouette dark shaded black white pencil
+            sketch drawing`
+    },
+    {
+        title: 'Van Gogh',
+        note: 'Pencil portrait of Vincent van Gogh',
+        img: 'images/van_gogh_pencil.webp',
+        details: 'A fine pencil portrait of the painter Vincent van Gogh, drawn on an egg.',
+        keywords: `painter artist face beard famous dutch post-impressionist art history sketch
+            drawing`
+    },
+    {
+        title: 'Voronoi',
+        note: 'Voronoi cell lace milled through the shell',
+        img: 'images/voronoi_lace_milled_damaged.webp',
+        details: `A lace of irregular Voronoi cells milled right through the shell, spreading out
+            from a smooth patch. This egg has some damage.`,
+        keywords: `honeycomb cells mesh net pierced cutwork carved openwork geometric mathematical
+            pattern eggshell sculpture`
+    },
+    {
+        title: 'Flower',
+        note: 'Stylised red flower with a twisting wire-like stem',
+        img: 'images/wire_flower_ink_and_acrylic.webp',
+        details: `A stylised flower with red petals, a yellow centre and a twisting wire-like stem,
+            outlined in ink and coloured in acrylic.`,
+        keywords: `floral yellow teal green petals plant whimsical colourful color painting abstract
+            ink acrylic`
+    },
+    {
+        title: 'Xmas dec',
+        note: 'Christmas decoration milled from an egg',
+        img: 'images/xmas_dec_milled.webp',
+        details: 'Large shapes milled through the shell to make a Christmas decoration.',
+        keywords: `ornament festive holiday winter seasonal hanging pierced cutwork carved openwork
+            eggshell sculpture white`
+    },
+    {
+        title: 'Xmas dec',
+        note: 'Milled star Christmas decoration',
+        img: 'images/xmas_dec_milled2.webp',
+        details: 'A large star milled through the shell to make a Christmas decoration.',
+        keywords: `ornament festive holiday winter seasonal hanging pierced cutwork carved openwork
+            eggshell sculpture white`
+    }
 ];
