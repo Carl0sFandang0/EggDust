@@ -5,6 +5,17 @@ if (typeof EGGS === 'undefined') {
 
 
 const EMAIL = 'EggDust@mail.co.uk';
+const SITE_URL = 'https://eggdust.co.uk/';   // the address of the live site (used for the search-engine data below)
+
+// The description of a photo for search engines and screen readers: the title plus the note
+function eggAlt(egg) {
+    const note = (egg.note || '').trim();
+    return note && note !== egg.title ? egg.title + ': ' + note : egg.title;
+}
+// Makes text safe to put inside an HTML attribute
+function escAttr(text) {
+    return String(text).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
 
 // ---- Gallery ----
 // How many eggs show at once. "Load more eggs" adds this many each time it is pressed.
@@ -36,7 +47,7 @@ function createCard(egg) {
     card.innerHTML =
         '<div class="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-panel">' +
         '<span class="egg-ph" aria-hidden="true"></span>' +
-        '<img src="' + egg.img + '" alt="' + egg.title + '" loading="lazy" ' +
+        '<img src="' + egg.img + '" alt="' + escAttr(eggAlt(egg)) + '" loading="lazy" ' +
         'class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
         'onerror="this.remove()">' +
         '</div>' +
@@ -91,6 +102,29 @@ searchInput.addEventListener('input', applySearch);
 searchClear.addEventListener('click', () => { searchInput.value = ''; applySearch(); searchInput.focus(); });
 
 renderGallery(shuffledEggs);
+
+// ---- Search-engine data: describes every egg photo (built from eggs.js, so new eggs are included automatically) ----
+(function () {
+    const data = {
+        '@context': 'https://schema.org',
+        '@type': 'ImageGallery',
+        '@id': SITE_URL + '#gallery',
+        name: 'The eggs',
+        url: SITE_URL + '#work',
+        isPartOf: { '@id': SITE_URL + '#website' },
+        image: EGGS.map((egg) => ({
+            '@type': 'ImageObject',
+            contentUrl: new URL(egg.img, SITE_URL).href,
+            name: egg.title,
+            description: eggAlt(egg),
+            creator: { '@id': SITE_URL + '#eggdust' }
+        }))
+    };
+    const tag = document.createElement('script');
+    tag.type = 'application/ld+json';
+    tag.textContent = JSON.stringify(data);
+    document.head.appendChild(tag);
+})();
 
 // ---- FAQ answers can hold links written as [words to click](address) ----
 // A link to a picture (.jpg .jpeg .png .webp .gif .avif) opens in a pop-up window on this page.
@@ -187,7 +221,7 @@ function openLightbox(egg) {
     lbImg.style.display = '';
     lbImg.onerror = () => { lbImg.style.display = 'none'; };
     lbImg.src = egg.img;
-    lbImg.alt = egg.title;
+    lbImg.alt = eggAlt(egg);
     document.getElementById('lb-title').textContent = egg.title;
     document.getElementById('lb-note').textContent = egg.note;
     lb.showModal();

@@ -9,6 +9,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+  <!-- Search-engine data about the site (the egg photos are described by script.js) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://eggdust.co.uk/#website",
+        "url": "https://eggdust.co.uk/",
+        "name": "EggDust",
+        "description": "Decorated eggs. Milled, painted and drawn on. A genre called RED Art: Real Egg Dust Art.",
+        "inLanguage": "en-GB",
+        "publisher": { "@id": "https://eggdust.co.uk/#eggdust" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://eggdust.co.uk/#eggdust",
+        "name": "EggDust",
+        "url": "https://eggdust.co.uk/",
+        "email": "EggDust@mail.co.uk",
+        "description": "Real eggs drawn on, painted, gilded with 24ct gold leaf, and milled with a diamond burr into lace and patterns. RED Art stands for Real Egg Dust Art."
+      }
+    ]
+  }
+  </script>
   <link rel="preload" href="images/openeye.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="tailwind.css?v=1">
   <link rel="stylesheet" href="style.css?v=12">
@@ -146,7 +171,7 @@
 
   <script src="eggs.js?v=5"></script>
   <script src="faq.js?v=4"></script>
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
   <script src="details.js?v=1"></script>
 </body>
 </html>
