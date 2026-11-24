@@ -1,0 +1,5 @@
+# Everyone is welcome to look at every page of the site.
+User-agent: *
+Allow: /
+
+Sitemap: https://eggdust.co.uk/sitemap.xml
